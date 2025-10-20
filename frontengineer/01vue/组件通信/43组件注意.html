@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="../lib/axios.min.js"></script>
+    <script src="../lib/vue.js"></script>
+
+</head>
+<style>
+    
+</style>
+<body>
+     
+    <div id="box">
+        <child :myname="myname"></child>
+    </div>
+    <script>
+        Vue.component('child', {
+            // v-once 不允许修改
+            props: ['myname'],
+            template: `
+            <div v-once>
+                {{myname}}
+                <button @click="handleClick">按钮</button>
+            </div>
+            `,
+            data() {
+                return { }
+            },
+            methods: {
+                handleClick() {
+                    this.myname = 'xm'
+                }
+            }
+            
+        })
+ 
+        new Vue({
+            el: '#box',
+            data() {
+                return {
+                    myname: 'kerwin'
+                }
+            } 
+        })       
+        
+        // 属性 -- 父组件传给你的属性，只有父组件重新传，子组件最好不随意修改，容易造成数据紊乱
+        // 状态 -- 组件内部的状态，可以随意修改
+    </script>
+</body>
+</html>

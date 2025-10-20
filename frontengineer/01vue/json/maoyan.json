@@ -1,0 +1,527 @@
+{
+    "status": 0,
+    "data": {
+        "films": [
+            {
+                "filmId": 7362,
+                "name": "水饺皇后",
+                "poster": "https://pic.maizuo.com/usr/movie/2334188aa38bea1cf6abd19b16818150.jpg",
+                "actors": [
+                    {
+                        "name": "马丽",
+                        "role": "臧健和",
+                        "avatarAddress": "https://pic.maizuo.com/usr/movie/f4e271abe4b44870a005f9b737627977.png"
+                    },
+                    {
+                        "name": "惠英红",
+                        "role": "红姐",
+                        "avatarAddress": "https://pic.maizuo.com/usr/movie/9b4e98a6dec2523218b7c9308fe83e22.jpg"
+                    },
+                    {
+                        "name": "朱亚文",
+                        "role": "华哥",
+                        "avatarAddress": "https://pic.maizuo.com/usr/movie/3e127b6829f0422865405fb2cf42c92f.jpg"
+                    },
+                    {
+                        "name": "王祖蓝",
+                        "role": "金先生",
+                        "avatarAddress": "https://pic.maizuo.com/usr/movie/d6d1d3d39dfd5cfd60dea47bbe22c86a.jpg"
+                    },
+                    {
+                        "name": "刘伟强",
+                        "role": "导演",
+                        "avatarAddress": "https://pic.maizuo.com/usr/movie/61cbfc8aa985ef7cd02eca7a587d69dd.jpg"
+                    }
+                ],
+                "director": "刘伟强",
+                "category": "剧情",
+                "synopsis": "根据真人真事改编。马丽领衔演绎真实女性成长史，逆风翻盘，闯出自己的沸腾人生！他们都不看好你，偏偏你最争气！ 开局“地狱”？臧健和（马丽 饰）带着两个女儿在异乡漂泊无依。既然一无所有，不如靠自己拼搏出另一番天地，大女主人生马上开启！困难重重？虽然被老板欺骗、被病痛折磨、被生活压榨，但永不服输的志气早晚会让所有不看好臧健和的人大声鼓掌！还有红姐（惠英红 饰）、华哥（朱亚文 饰）、糖水伯（袁富华 饰）等善良邻里，做她最坚实的后盾！白手起家？靠自己双手改写命运走向，凭借一碗水饺登上人生巅峰！水饺皇后的故事就此拉开帷幕……",
+                "filmType": {
+                    "name": "2D",
+                    "value": 1
+                },
+                "nation": "中国大陆",
+                "language": "",
+                "videoId": "",
+                "premiereAt": 1745971200,
+                "timeType": 3,
+                "runtime": 119,
+                "grade": "7.8",
+                "item": {
+                    "name": "2D",
+                    "type": 1
+                },
+                "isPresale": true,
+                "isSale": false
+            },
+            {
+                "filmId": 7368,
+                "name": "猎金·游戏",
+                "poster": "https://pic.maizuo.com/usr/movie/c423689d354b25494d4d626f4913a99a.jpg",
+                "actors": [
+                    {
+                        "name": "邱礼涛",
+                        "role": "导演",
+                        "avatarAddress": "https://pic.maizuo.com/usr/movie/03f51d6fde99eaa0a39cbc5db3d6514b.jpg"
+                    },
+                    {
+                        "name": "刘德华",
+                        "role": "张托德",
+                        "avatarAddress": "https://pic.maizuo.com/usr/movie/a5fc45490b819cda18057b127816b7a3.jpg"
+                    },
+                    {
+                        "name": "欧豪",
+                        "role": "高寒",
+                        "avatarAddress": "https://pic.maizuo.com/usr/movie/5a72a149ad8a8a2ea46ad41e98aa88d2.jpg"
+                    },
+                    {
+                        "name": "倪妮",
+                        "role": "安娜",
+                        "avatarAddress": "https://pic.maizuo.com/usr/movie/e01f041890ae020fcec9c15768643e1d.jpg"
+                    },
+                    {
+                        "name": "黄奕",
+                        "role": "李海伦",
+                        "avatarAddress": "https://pic.maizuo.com/usr/movie/d34a32bc5c6dde7aef658b27716ba986.jpg"
+                    }
+                ],
+                "director": "邱礼涛",
+                "category": "剧情|犯罪",
+                "synopsis": "是谁在掏空你的钱包？想赚钱应该买股票还是买基金？看穿投资圈暴涨暴跌的“潜规则”，五一劳动节一起讨回血汗钱！金融大师张托德（刘德华 饰）堪称业界最强“预言家”，经他“点拨”的投资者全都赚了大钱！刚毕业的金融高材生高寒（欧豪 饰）阴错阳差与张托德成为师徒，高端客户、亿万大单随之涌现。随着张托德的旧识安娜（倪妮 饰）突然出现，股市狂潮再起，暴涨暴跌的背后是投资机遇还是资本游戏？深陷其中的股民是一夜暴富还是沦为“韭菜”？当金融市场被利用变成“赌场”，股市涨跌皆骗局，游戏规则该由谁来定？",
+                "filmType": {
+                    "name": "4D",
+                    "value": 13
+                },
+                "nation": "中国大陆",
+                "language": "",
+                "videoId": "",
+                "premiereAt": 1746057600,
+                "timeType": 3,
+                "runtime": 129,
+                "grade": "7.8",
+                "item": {
+                    "name": "4D",
+                    "type": 13
+                },
+                "isPresale": true,
+                "isSale": false
+            },
+            {
+                "filmId": 7372,
+                "name": "独一无二",
+                "poster": "https://pic.maizuo.com/usr/movie/ea8388f4f0b1542e80275616e827a8c4.jpg",
+                "actors": [
+                    {
+                        "name": "王沐",
+                        "role": "导演",
+                        "avatarAddress": "https://pic.maizuo.com/usr/movie/df58d81dec4f1a6cc4ef702edfb79e97.jpg"
+                    },
+                    {
+                        "name": "张婧仪",
+                        "role": "喻延",
+                        "avatarAddress": "https://pic.maizuo.com/usr/movie/0b69098a38cd0ceead528387a51a2698.jpg"
+                    },
+                    {
+                        "name": "陈明昊",
+                        "role": "爸爸",
+                        "avatarAddress": "https://pic.maizuo.com/usr/movie/7a3cde77eef28f6414a182b3257fbc24.jpg"
+                    },
+                    {
+                        "name": "辛云来",
+                        "role": "哥哥",
+                        "avatarAddress": "https://pic.maizuo.com/usr/movie/16d5f5b62d9175b4376136d1e9f18479.jpg"
+                    },
+                    {
+                        "name": "蒋勤勤",
+                        "role": "妈妈",
+                        "avatarAddress": "https://pic.maizuo.com/usr/movie/75205be0bb6d4cd73459f7380cdbb7b5.jpg"
+                    }
+                ],
+                "director": "王沐",
+                "category": "剧情|喜剧|家庭|青春",
+                "synopsis": "本片改编自温暖治愈的法国电影《贝利叶一家》。17岁的女孩喻延（张婧仪饰）与爸爸（陈明昊饰）、妈妈（蒋勤勤饰）、哥哥（辛云来饰）生活在祖辈经营的喻记鱼杂铺中。作为听障家庭中唯一的听人，她自幼游走在家人的无声世界与外面的有声世界之间，已经习惯于担任桥梁和翻译器。家人的爱与依赖如藤蔓般缠绕着她，然而去往更宽广世界的渴望之火也在心里熊熊灼烧。突如其来的变故，让喻延不得不面对追寻梦想与捍卫家人的两难局面。在成长的选择中，她尝试着找寻自己，也找到能与家人分享的歌声。",
+                "filmType": {
+                    "name": "2D",
+                    "value": 1
+                },
+                "nation": "中国大陆",
+                "language": "",
+                "videoId": "",
+                "premiereAt": 1747440000,
+                "timeType": 3,
+                "runtime": 122,
+                "item": {
+                    "name": "2D",
+                    "type": 1
+                },
+                "isPresale": true,
+                "isSale": false
+            },
+            {
+                "filmId": 7356,
+                "name": "雷霆特攻队*",
+                "poster": "https://pic.maizuo.com/usr/movie/dd4c6c3493d91ddca79aa118d554877b.jpg",
+                "actors": [
+                    {
+                        "name": "杰克·施莱尔",
+                        "role": "导演",
+                        "avatarAddress": "https://pic.maizuo.com/usr/movie/2996d2e38202e4526d118d113b5182b4.jpg"
+                    },
+                    {
+                        "name": "弗洛伦斯·皮尤",
+                        "role": "叶莲娜 Yelena Belova",
+                        "avatarAddress": "https://pic.maizuo.com/usr/movie/e1b89ecf8c5971e1da1d9b195d45cf1f.jpg"
+                    },
+                    {
+                        "name": "塞巴斯蒂安·斯坦",
+                        "role": "巴基 Bucky Barnes",
+                        "avatarAddress": "https://pic.maizuo.com/usr/movie/1e7d6264e5bf3618299d1d8f3082a991.jpg"
+                    },
+                    {
+                        "name": "怀亚特·罗素",
+                        "role": "美国密探 / 约翰·沃克 / John Walker / ",
+                        "avatarAddress": "https://pic.maizuo.com/usr/movie/55ee6f71a41258791a909c12768db429.jpg"
+                    },
+                    {
+                        "name": "欧嘉·柯瑞兰寇",
+                        "role": "模仿大师 / 安东妮雅·德雷科夫 / Antonia / ",
+                        "avatarAddress": "https://pic.maizuo.com/usr/movie/5ae2886cf34c8f241d2e3a30e3bfcac7.jpg"
+                    }
+                ],
+                "director": "杰克·施莱尔",
+                "category": "动作|冒险",
+                "synopsis": "《雷霆特攻队*》中集结了一支颠覆传统的反英雄团队——“二代黑寡妇”叶莲娜、“冬兵”巴基、“红色守卫”阿列克谢、“幽灵”、“模仿大师”和“美国密探”约翰·沃克。在发现陷入了瓦伦蒂娜设置的死亡陷阱后，这群已不抱有幻想的弃儿必须开始一项危险的任务，迫使他们面对各自最黑暗的过往。这个混乱的“最低配”团队是否会一盘散沙内部瓦解，还是会在为时已晚之前及时完成救赎并团结起来呢？影片由弗洛伦斯·皮尤，塞巴斯蒂安·斯坦，怀亚特·罗素，欧嘉·柯瑞兰蔻，刘易斯·普尔曼，杰拉尔丁·维什瓦纳坦，克里斯·鲍尔，温德尔·爱德华·皮尔斯主演，大卫·哈伯、汉娜·乔恩-卡门及朱莉娅·路易斯-德瑞弗斯特别出演。由杰克·施雷尔执导，凯文·费奇担任制片，路易斯·斯波西托、布莱恩·查佩克、杰森·塔梅兹监制。埃里克·皮尔森和乔安娜·卡洛担任编剧，埃里克·皮尔森担任剧情策划。影片将于2025年4月30日领先北美，登陆全国大银幕。",
+                "filmType": {
+                    "name": "2D",
+                    "value": 1
+                },
+                "nation": "美国",
+                "language": "",
+                "videoId": "",
+                "premiereAt": 1745971200,
+                "timeType": 3,
+                "runtime": 126,
+                "grade": "7.5",
+                "item": {
+                    "name": "2D",
+                    "type": 1
+                },
+                "isPresale": true,
+                "isSale": false
+            },
+            {
+                "filmId": 7373,
+                "name": "人生开门红",
+                "poster": "https://pic.maizuo.com/usr/movie/f9c7070390b1c968ff9888be8a00c192.jpg",
+                "actors": [
+                    {
+                        "name": "易小星",
+                        "role": "导演",
+                        "avatarAddress": "https://pic.maizuo.com/usr/movie/a9ae2e75e0a377dc69e58c69646284d0.jpg"
+                    },
+                    {
+                        "name": "常远",
+                        "role": "周大江",
+                        "avatarAddress": "https://pic.maizuo.com/usr/movie/7473171dfa35d0fba57818ee1d43f22a.jpg"
+                    },
+                    {
+                        "name": "邓家佳",
+                        "role": "小海茉",
+                        "avatarAddress": "https://pic.maizuo.com/usr/movie/b21f6e2bd7b4b3c2a509023b6aae0b0e.jpg"
+                    },
+                    {
+                        "name": "王耀庆",
+                        "role": "秦天龙",
+                        "avatarAddress": "https://pic.maizuo.com/usr/movie/0a499c7dda7a77f061f4bee182832748.jpg"
+                    },
+                    {
+                        "name": "田雨",
+                        "role": "演员",
+                        "avatarAddress": "https://pic.maizuo.com/usr/movie/4c07eab157ca2094ea75504fe98b7f9a.jpg"
+                    }
+                ],
+                "director": "易小星",
+                "category": "喜剧|剧情",
+                "synopsis": "易小星生猛喜剧直击网红直播乱象，惊天内幕即将揭秘！你想品尝一夜成名的滋味吗？你想感受被千万人追捧的感觉吗？你想拥有一呼百应的家人们吗？一场瞒天过海的危机公关，把街头小贩周大江捧成了一线网红小海茉的直播搭子，一夜之间变身直播界新宠。“红”运正当头，热搜上不停，然而，关掉美颜滤镜的网红们真实生活究竟如何？比黑洞还深的网红直播产业究竟藏着什么秘密？在这场“网红大冒险”的游戏里，“拦路BOSS”打不完根本打不完……",
+                "filmType": {
+                    "name": "2D",
+                    "value": 1
+                },
+                "nation": "中国大陆",
+                "language": "",
+                "videoId": "",
+                "premiereAt": 1746057600,
+                "timeType": 3,
+                "runtime": 114,
+                "grade": "7.6",
+                "item": {
+                    "name": "2D",
+                    "type": 1
+                },
+                "isPresale": true,
+                "isSale": false
+            },
+            {
+                "filmId": 7380,
+                "name": "幽灵公主",
+                "poster": "https://pic.maizuo.com/usr/movie/ed876bffe99129e1aece0cd2916346af.jpg",
+                "actors": [
+                    {
+                        "name": "宫崎骏",
+                        "role": "导演",
+                        "avatarAddress": "https://pic.maizuo.com/usr/movie/589bd0777f174e554b866cbc61145422.jpg"
+                    },
+                    {
+                        "name": "松田洋治",
+                        "role": "配音演员",
+                        "avatarAddress": "https://pic.maizuo.com/usr/movie/aad79a7df12caeddd656e853c983dd59.jpg"
+                    },
+                    {
+                        "name": "石田百合子",
+                        "role": "阿桑 San",
+                        "avatarAddress": "https://pic.maizuo.com/usr/movie/926dababdb7d32afc1072ce6985307c5.jpg"
+                    },
+                    {
+                        "name": "赵丽颖",
+                        "role": "小桑",
+                        "avatarAddress": "https://pic.maizuo.com/usr/movie/455bb5fadb9de2b7de45f5f9940842e1.jpg"
+                    },
+                    {
+                        "name": "田中裕子",
+                        "role": "幻姬 Eboshi-gozen",
+                        "avatarAddress": "https://pic.maizuo.com/usr/movie/4fe64e4c5d3c59097044e0433d5f873a.jpg"
+                    }
+                ],
+                "director": "宫崎骏",
+                "category": "动画|奇幻|冒险",
+                "synopsis": "宫崎骏封神之作！少年阿席达卡为解开诅咒之谜，意外卷入一场人类与森林的战争漩涡。由白狼养大的幽灵公主小桑，挥舞利刃守护森林圣地；而炼铁场的首领黑帽，为百姓生存不断掠夺森林，正策划着一场“弑神行动”......随着森林山兽神的现身，各方势力蠢蠢欲动，在这场跨越种族的生死博弈中，一个关于人类命运的终极秘密，即将揭晓……",
+                "filmType": {
+                    "name": "2D",
+                    "value": 1
+                },
+                "nation": "日本",
+                "language": "",
+                "videoId": "",
+                "premiereAt": 1746057600,
+                "timeType": 3,
+                "runtime": 134,
+                "grade": "7.8",
+                "item": {
+                    "name": "2D",
+                    "type": 1
+                },
+                "isPresale": true,
+                "isSale": false
+            },
+            {
+                "filmId": 7395,
+                "name": "会计刺客2",
+                "poster": "https://pic.maizuo.com/usr/movie/4a8a50e7a3dc7eb3f88a8347fc4fed1f.jpg",
+                "actors": [
+                    {
+                        "name": "加文·欧康诺",
+                        "role": "导演",
+                        "avatarAddress": "https://pic.maizuo.com/usr/movie/d8fadbacfb3cfc0b091f435116dc7aaa.jpg"
+                    },
+                    {
+                        "name": "本·阿弗莱克",
+                        "role": "Christian Wolff",
+                        "avatarAddress": "https://pic.maizuo.com/usr/movie/1a7535126a423d6a7433161147ba11e8.jpg"
+                    },
+                    {
+                        "name": "乔·博恩瑟",
+                        "role": "Brax",
+                        "avatarAddress": "https://pic.maizuo.com/usr/movie/002783383b41deb02c85e2c5f782d13b.jpg"
+                    },
+                    {
+                        "name": "辛希亚·阿戴-罗宾森",
+                        "role": "Marybeth Medina",
+                        "avatarAddress": "https://pic.maizuo.com/usr/movie/685348aa5a3bc85c9c3ddf989f6dab87.jpg"
+                    },
+                    {
+                        "name": "丹妮拉·皮内达",
+                        "role": "演员",
+                        "avatarAddress": "https://pic.maizuo.com/usr/movie/f2f219317879f6169d5caf9e82637c0f.jpg"
+                    }
+                ],
+                "director": "加文·欧康诺",
+                "category": "剧情|动作|惊悚|犯罪",
+                "synopsis": "当一位老友遭到谋杀，只留下一条神秘讯息：“找到那个会计师”，克里斯蒂安·沃尔夫（本·阿弗莱克饰）不得已开始追查此案，并招来了战力惊人的弟弟布莱斯顿（乔恩·伯恩瑟尔饰）助阵。他们与金融犯罪执法局副局长玛莉贝丝·麦迪娜（辛西娅·阿戴-罗宾逊饰）联手，揭露了一场致命阴谋，却也因此成为杀手集团的目标，对方誓要不惜一切代价保守阴谋的秘密。",
+                "filmType": {
+                    "name": "2D",
+                    "value": 1
+                },
+                "nation": "美国",
+                "language": "",
+                "videoId": "",
+                "premiereAt": 1747353600,
+                "timeType": 3,
+                "runtime": 124,
+                "grade": "7.5",
+                "item": {
+                    "name": "2D",
+                    "type": 1
+                },
+                "isPresale": true,
+                "isSale": false
+            },
+            {
+                "filmId": 3620,
+                "name": "攻壳机动队",
+                "poster": "https://pic.maizuo.com/usr/movie/dc09ff5ca3c0806f3114f353573ad110.jpg",
+                "actors": [
+                    {
+                        "name": "押井守",
+                        "role": "导演",
+                        "avatarAddress": "https://pic.maizuo.com/usr/movie/76a3701c46c1dde5b6593caf2c9e6e2e.jpg"
+                    },
+                    {
+                        "name": "Richard Cansino",
+                        "role": "Diplomat (voice: English version) (as Steve Davis)",
+                        "avatarAddress": "https://pic.maizuo.com/usr/movie/f872a2c2fb093c1b0c707108a802a7bc.jpg"
+                    },
+                    {
+                        "name": "理查德·艾普卡",
+                        "role": "Batô (voice: English version) (as George Richard)",
+                        "avatarAddress": "https://pic.maizuo.com/usr/movie/da881f38ff5b1bc258d39957a958ee81.jpg"
+                    },
+                    {
+                        "name": "迈克尔·索里奇",
+                        "role": "Ishikawa (voice: English version) (as Mike Sorich)",
+                        "avatarAddress": "https://pic.maizuo.com/usr/movie/2d843b17f7ea852b43119ddd3a5a9b92.jpg"
+                    },
+                    {
+                        "name": "道格·斯通",
+                        "role": "Garbage Collector B (voice: English version)",
+                        "avatarAddress": "https://pic.maizuo.com/usr/movie/845738ff35ac8b12031d21d9bdc5204f.jpg"
+                    }
+                ],
+                "director": "押井守",
+                "category": "动作|科幻|动画",
+                "synopsis": "押井守执导动画神作《攻壳机动队》上映30周年特别纪念，全新4K修复版首登内地大银幕！公元2029年的未来都市，首位全身“义体化”的女警草薙素子在与队友追捕神秘黑客\"傀儡师\"的过程中逐渐迷失。当记忆可以篡改、身体沦为躯壳，“人类”的定义究竟还剩几何？影片以开创性的赛博美学与深刻的内容思辨，探讨了在AI全面到来的时代，身份、灵魂与技术异化的永恒命题！",
+                "filmType": {
+                    "name": "2D",
+                    "value": 1
+                },
+                "nation": "日本",
+                "language": "",
+                "videoId": "XMjYxMDY4Njc2OA==",
+                "premiereAt": 1746835200,
+                "timeType": 3,
+                "runtime": 83,
+                "grade": "2",
+                "item": {
+                    "name": "2D",
+                    "type": 1
+                },
+                "isPresale": true,
+                "isSale": false
+            },
+            {
+                "filmId": 7286,
+                "name": "哪吒之魔童闹海",
+                "poster": "https://pic.maizuo.com/usr/movie/0041ec9868fca0a26cec07c5432af9d4.jpg",
+                "actors": [
+                    {
+                        "name": "饺子",
+                        "role": "导演",
+                        "avatarAddress": "https://pic.maizuo.com/usr/movie/3f224390f23f4ff84a1bc7b367238a87.jpg"
+                    },
+                    {
+                        "name": "吕艳婷",
+                        "role": "儿童哪吒",
+                        "avatarAddress": "https://pic.maizuo.com/usr/movie/704413add4cd12e4f65d028215c3c593.png"
+                    },
+                    {
+                        "name": "囧森瑟夫",
+                        "role": "少年哪吒",
+                        "avatarAddress": "https://pic.maizuo.com/usr/movie/b9e30247efd1fceb1fb705c9f0430dfe.png"
+                    },
+                    {
+                        "name": "瀚墨",
+                        "role": "敖丙",
+                        "avatarAddress": "https://pic.maizuo.com/usr/movie/0286d4015e6f0014a6aad9b3fb170410.png"
+                    },
+                    {
+                        "name": "陈浩",
+                        "role": "李靖",
+                        "avatarAddress": "https://pic.maizuo.com/usr/movie/6427391a4f6c3a28fd3ba53faf9527f6.png"
+                    }
+                ],
+                "director": "饺子",
+                "category": "喜剧|剧情|动画",
+                "synopsis": "天劫之后，哪吒、敖丙的灵魂虽保住了，但肉身很快会魂飞魄散。太乙真人打算用七色宝莲给二人重塑肉身。但是在重塑肉身的过程中却遇到重重困难，哪吒、敖丙的命运将走向何方？",
+                "filmType": {
+                    "name": "4D",
+                    "value": 13
+                },
+                "nation": "中国大陆",
+                "language": "",
+                "videoId": "",
+                "premiereAt": 1738108800,
+                "timeType": 3,
+                "runtime": 144,
+                "grade": "7.8",
+                "item": {
+                    "name": "4D",
+                    "type": 13
+                },
+                "isPresale": true,
+                "isSale": false
+            },
+            {
+                "filmId": 5472,
+                "name": "情书",
+                "poster": "https://pic.maizuo.com/usr/movie/649ddfb24715bfa2c742f18d498448d6.jpg",
+                "actors": [
+                    {
+                        "name": "岩井俊二",
+                        "role": "导演",
+                        "avatarAddress": "https://pic.maizuo.com/usr/movie/977be5220443071ec4b46bedf2e9051b.jpg"
+                    },
+                    {
+                        "name": "中山美穗",
+                        "role": "藤井树、渡边博子",
+                        "avatarAddress": "https://pic.maizuo.com/usr/movie/104aa909174ae1e6a72d1b2b8df8287d.jpg"
+                    },
+                    {
+                        "name": "丰川悦司",
+                        "role": "秋叶茂",
+                        "avatarAddress": "https://pic.maizuo.com/usr/movie/3eb977abd338ad78bab6dbbc8d31406b.jpg"
+                    },
+                    {
+                        "name": "酒井美纪",
+                        "role": "藤井树（少女）",
+                        "avatarAddress": "https://pic.maizuo.com/usr/movie/91ec836371e51f43e02386e278d3aaa8.jpg"
+                    },
+                    {
+                        "name": "柏原崇",
+                        "role": "藤井树（少年） ",
+                        "avatarAddress": "https://pic.maizuo.com/usr/movie/1fab9331d1d695fbce7772caaac09f3c.jpg"
+                    }
+                ],
+                "director": "岩井俊二",
+                "category": "剧情|爱情",
+                "synopsis": "日本神户某个飘雪的冬日， 渡边博子 （ 中山美穗 饰）在前未婚夫藤井树的三周年祭日上又一次悲痛到不能自已。正因为无法抑制住对已逝恋人的思念，渡边博子在其中学同学录里发现“ 藤井树” 在小樽市读书时的地址时，依循着寄发了一封本以为是发往天国的情书。不想不久渡边博子竟然收到署名为“藤井树”的回信，经过进一步了解，她知晓此藤井树是一个同她年纪相仿的女孩，且还是男友藤井树 （ 柏原崇 饰）少年时代的同班同学，原来是博子从同学录中误抄了她的地址。为了多了解一些昔日恋人在中学时代的情况，渡边博子开始与女性藤井树书信往来。而藤井树在不断的回忆中，渐渐发现少年时代与她同名同姓的那个藤井树曾对自己藏了一腔柔情 。",
+                "filmType": {
+                    "name": "2D",
+                    "value": 1
+                },
+                "nation": "日本",
+                "language": "",
+                "videoId": "",
+                "premiereAt": 1747699200,
+                "timeType": 3,
+                "runtime": 116,
+                "item": {
+                    "name": "2D",
+                    "type": 1
+                },
+                "isPresale": true,
+                "isSale": false
+            }
+        ],
+        "total": 51
+    },
+    "msg": "ok"
+}

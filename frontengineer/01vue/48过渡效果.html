@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="lib/axios.min.js"></script>
+    <script src="lib/vue.js"></script>
+</head>
+<style>
+    /* 进场动画 */
+    .kerwin-enter-active {
+        animation: aaa 1.5s;
+    }
+
+    /* 出场动画 */
+    .kerwin-leave-active {
+        animation: aaa 1.5s reverse;
+    }
+
+
+    /* 过程 */
+    @keyframes aaa {
+        0% {
+            opacity: 0;
+            transform: translateX(100px);
+        }
+        100% {
+            opacity: 1;
+            transform: translateX(0px);
+        }
+    }
+</style>
+<body>
+    <div id="box">
+       
+         <button @click="isShow = !isShow">click</button>
+ 
+         <div v-show="isShow" class="kerwin-enter-active">000000</div>
+
+         <!-- transition中只能存在一个元素 -->
+         <transition enter-active-class="kerwin-enter-active" leave-active-class="kerwin-leave-active">
+            <div v-if="isShow" key="1">11111</div>
+            <div v-else="isShow"  key="2">22222</div>
+            <!-- <div v-if="isShow" >11111</div>
+            <div v-else="isShow" >22222</div> -->
+            <!-- <p v-else="isShow" >22222</p> -->
+            
+         </transition>
+
+         <transition name="kerwin" appear>
+            <div v-show="isShow" >wwwww</div>
+         </transition>
+
+    </div>
+    <script>
+   
+ 
+        new Vue({
+            el: '#box',
+            data() {
+                return {
+                     isShow: true 
+                }
+            } 
+        })
+    </script>
+</body>
+</html>

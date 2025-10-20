@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="lib/axios.min.js"></script>
+    <script src="lib/vue.js"></script>
+</head>
+<style>
+*{
+    padding: 0;
+    margin: 0;
+}
+ul{
+    list-style: none;
+    width: 100vw;
+    height: 60px;
+    line-height: 60px;
+    display: flex;
+    justify-content: space-between;
+    position: fixed;
+    bottom: 0;
+    text-align: center;
+    background-color: #aaaaaa;
+}
+li{
+    flex: 1;
+}
+</style>
+<body>
+    <div id="box">
+         <child>
+            <div slot="a">111</div>
+            <div slot="b">222</div>
+            <div>333</div>
+         </child>
+
+
+         <navbar>
+            <button slot="left">aaa</button>
+            <i class="iconfont icon-all" slot="right">字体图标</i>
+         </navbar>
+    </div>
+    <script>
+        // 单个插槽  <slot></slot>
+        // 具名插槽  <slot name="name"></slot>
+
+
+        Vue.component('child', {
+            template: `
+                <div>
+                    child
+                    <slot name="a"></slot> 
+                    <slot name="b"></slot>    
+                    <slot name="c"></slot>       
+                </div>
+            ` 
+        })
+
+
+        Vue.component('navbar', {
+            template: `
+                <div>
+                    <slot name="left"></slot>
+                    <span>navbar</span>
+                    <slot name="right"></slot>
+                </div>
+            ` 
+        })
+ 
+        new Vue({
+            el: '#box',
+            data() {
+                return {
+                      
+                }
+            } 
+        })
+    </script>
+</body>
+</html>

@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+   
+</style>
+<script src="lib/vue.js"></script>
+<body>
+    <!-- 
+        Parent beforeCreate
+        Parent created
+        Parent beforeMount
+        Child  beforeCreate
+        Child  created
+        Child  beforeMount
+        Child  mounted
+        Parent mounted 
+    -->
+
+    <div id="box">
+        <Child />
+    </div>
+    <script>
+        Vue.component('Child', {
+            template: `
+                <div>Child Component</div>
+            `,
+            beforeCreate() {
+                console.log('Child beforeCreate');
+            },
+            created() {
+                console.log('Child created');
+            },
+            beforeMount() {
+                console.log('Child beforeMount');
+            },
+            mounted() {
+                console.log('Child mounted');
+            },
+            beforeUpdate() {
+                console.log('Child beforeUpdate');
+            },
+            updated() {
+                console.log('Child updated');
+            },
+            beforeDestroy() {
+                console.log('Child beforeDestroy');
+            },
+            destroyed() {
+                console.log('Child destroyed');
+            }
+        })
+
+        new Vue({
+            el: '#box',
+            beforeCreate() {
+                console.log('Parent beforeCreate');
+            },
+            created() {
+                console.log('Parent created');
+            },
+            beforeMount() {
+                console.log('Parent beforeMount');
+            },
+            mounted() {
+                console.log('Parent mounted');
+            },
+            beforeUpdate() {
+                console.log('Parent beforeUpdate');
+            },
+            updated() {
+                console.log('Parent updated');
+            },
+            beforeDestroy() {
+                console.log('Parent beforeDestroy');
+            },
+            destroyed() {
+                console.log('Parent destroyed');
+            }
+        })
+    </script>
+</body>
+</html>

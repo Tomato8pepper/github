@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="../lib/axios.min.js"></script>
+    <script src="../lib/vue.js"></script>
+
+</head>
+<style>
+    .item{
+        overflow: hidden;
+        width: 400px;
+    }
+    img{
+        width: 100px;
+        float: left;
+    }
+    .detail{
+        width: 400px;
+        min-height: 200px;
+        position: fixed;
+        right: 0;
+        top: 40px;
+        border: 1px solid yellow;
+    }
+</style>
+<body>
+    <!-- xhr是标准、fetch -->
+    <div id="box">
+         <button @click="handleAjax()">ajax</button>
+
+         <film-item v-for="item in datalist" :key="item.filmId" :mydata="item"
+             ></film-item>
+         
+         <film-detail ></film-detail>
+    
+    </div>
+    <script>
+        var bus = new Vue()
+
+        Vue.component('filmItem', {
+            template: 
+                `<div class="item">
+                    <img :src="mydata.poster" />
+ 
+                    {{mydata.name}}     
+                    <div>        
+                        <button @click="handleDetail">详情</button>     
+                    </div>
+                     
+                    
+                </div>`,
+            props: ['mydata'],
+            methods: {
+                handleDetail() {
+                    console.log(this.mydata.synopsis)
+                    bus.$emit('myevent', this.mydata.synopsis)
+                }
+            },
+             
+        })
+
+ 
+
+        Vue.component('filmDetail', {
+            mounted() {
+                bus.$on('mydata', (data) => {
+                    this.filmdata = data
+                })
+            },
+            template: 
+                `<div class="detail">
+                    {{filmdata}}
+                </div>`,
+            data() {
+                return {
+                    filmdata: ''
+                }
+            }
+             
+             
+        })
+ 
+        new Vue({
+            el: '#box',
+            data() {
+                return {
+                    datalist: [] 
+                }
+            },
+            methods: {
+                handleAjax() {
+                    fetch('./json/maoyan.json')
+                        .then(res => res.json())
+                        .then(res => {
+                            console.log(res.data)
+                            this.datalist = res.data.films
+                        })
+                } 
+            }
+        })        
+    </script>
+</body>
+</html>

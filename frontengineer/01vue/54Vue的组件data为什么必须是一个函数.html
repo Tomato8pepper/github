@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+   
+</style>
+<script src="lib/vue.js"></script>
+<body>
+    <div id="box">
+        <!-- 
+            Vue的组件data为什么必须是一个函数?
+            new Vue是一个单例模式，不会有任何的合并操作，所以根实例不必校验data一定是一个函数。 组件
+            的data必须是一个函数，是为了防止两个组件的数据产生污染。 如果都是对象的话，会在合并的
+            时候，指向同一个地址。 而如果是函数的时候，合并的时候调用，会产生两个空间。
+         -->
+         
+    </div>
+    <script>
+        new Vue({
+            el: '#box',
+            data: {
+                 
+            },
+            methods: {
+                
+            }
+        })
+    </script>
+</body>
+</html>

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="../lib/axios.min.js"></script>
+    <script src="../lib/vue.js"></script>
+</head>
+<body>
+    <div id="box">
+        <h1>我是父组件</h1>
+        <Son />
+    </div>
+    <script>
+        Vue.component('Son', {
+            template: `
+            <div>
+                <h1>我是子组件</h1>
+                <SonTwo />
+            </div>
+            `,
+            inject:['titleFather'],
+            created(){
+                 console.log(`${this.titleFather}-----------Son`)
+            },
+            data(){
+                return{
+                    title:'我是子组件 '
+                }
+            }
+        })
+
+        Vue.component('SonTwo', {
+            template: `
+            <div>
+                <h1>我是子孙组件</h1>
+            </div>
+            `,
+            inject:['titleFather'],
+            created(){
+                 console.log(`${this.titleFather}-----------SonTwo`)
+            },
+            data(){
+                return{
+                    title:'我是子组件 '
+                }
+            }
+        })
+
+        Vue.component({
+
+        })
+         
+        var vm = new Vue({
+            el: '#box',
+            provide(){
+                return {
+                    titleFather: '父组件的值'
+                }
+            },
+            data(){
+                return{
+                    title:'我是父组件 '
+                }
+            }
+        })
+    </script>
+</body>
+</html>
+

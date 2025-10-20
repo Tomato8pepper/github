@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<script src="lib/vue.js"></script>
+<body>
+    <div id="box">
+        <input type="text" v-model="mytext" />
+        <button @click="handleAdd()">Add</button>
+
+        <ul>
+            <li v-for="(item, index) in datalist">
+                {{item}} - {{index}}
+                <button @click=handleDel(index)>del</button>
+            </li>
+        </ul>
+
+        <div v-show="!datalist.length">
+            待办事项空空如也~
+        </div>
+    </div>
+    <script>
+        new Vue({
+            el: '#box',
+            data: {
+                datalist: ['111', '222', '333'],
+                mytext: 'aaa'
+            },
+            methods: {
+                handleAdd() {
+                    // 通过原生dom拿值 - v-model（状态改变，页面值同时变）
+                    if(this.mytext) this.datalist.push(this.mytext)
+                    this.mytext = ''
+                },
+                handleDel(index) {
+                    console.log(index)
+                    // splice('索引', number, '补充')
+                    this.datalist.splice(index, 1)
+                }
+            }
+        })
+    </script>
+</body>
+</html>

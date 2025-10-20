@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="lib/axios.min.js"></script>
+    <script src="lib/vue.js"></script>
+</head>
+<style>
+*{
+    padding: 0;
+    margin: 0;
+}
+ul{
+    list-style: none;
+    width: 100vw;
+    height: 60px;
+    line-height: 60px;
+    display: flex;
+    justify-content: space-between;
+    position: fixed;
+    bottom: 0;
+    text-align: center;
+    background-color: #aaaaaa;
+}
+li{
+    flex: 1;
+}
+</style>
+<body>
+    <div id="box">
+         <child>
+            <template v-slot:a>
+                <div>111</div>
+            </template>
+            <template #b>
+                <div>222</div>
+            </template>
+            
+            <div>333</div>
+         </child>
+
+
+         <navbar>
+            <template #left>
+                <button >aaa</button>
+            </template>
+            <template #right>
+                <i class="iconfont icon-all" >字体图标</i>
+            </template>
+            
+            
+         </navbar>
+    </div>
+    <script>
+        // 插槽的意义：拓展组件的能力，提高组件的复用性
+
+        // 单个插槽  <slot></slot>
+        // 具名插槽  <slot name="name"></slot>
+
+
+        Vue.component('child', {
+            template: `
+                <div>
+                    child
+                    <slot name="a"></slot> 
+                    <slot name="b"></slot>    
+                    <slot name="c"></slot>    
+                    <slot ></slot>    
+                </div>
+            ` 
+        })
+
+
+        Vue.component('navbar', {
+            template: `
+                <div>
+                    <slot name="left"></slot>
+                    <span>navbar</span>
+                    <slot name="right"></slot>
+                </div>
+            ` 
+        })
+ 
+        new Vue({
+            el: '#box',
+            data() {
+                return {
+                      
+                }
+            } 
+        })
+    </script>
+</body>
+</html>

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="../lib/axios.min.js"></script>
+    <script src="../lib/vue.js"></script>
+</head>
+<body>
+    <div id="box">
+        <Test3
+        :status="status" 
+        :title="title"
+        @getData="getData" />
+    </div>
+    <script>
+        // 通过 $attrs(属性,除了【props中定义的属性】)  和 $listeners(方法)  来给
+        // 嵌套子组件传递父组件的属性和方法
+        Vue.component('Test3', {
+            template: `
+            <div>
+                <h1>Test3 组件</h1>
+                <br /><br />
+                <Test4   v-bind="$attrs" v-on="$listeners"/>
+            </div>
+            `,
+            props: ["title"],
+            created() {
+                console.log("-----------");
+                console.log(this.$attrs);  //{status: false}
+                console.log(this.$listeners); // {getData: ƒ}
+            }
+        })
+
+        Vue.component('Test4', {
+            template: `
+            <div>
+                <h1>Test4 组件</h1>
+            </div>
+            `,
+            created(){
+                console.log('-----Test4------')
+                console.log(this.$attrs) //{status: false}
+                console.log(this.$listeners) // {getData: ƒ}
+            }
+        })
+
+        var vm = new Vue({
+            el: '#box',
+            data(){
+                return {
+                    title:'personal 组件',
+                    status: false
+                }
+            },
+            methods:{
+                getData(){
+                    console.log(this.title)
+                }  
+            }
+        })
+    </script>
+</body>
+</html>
+

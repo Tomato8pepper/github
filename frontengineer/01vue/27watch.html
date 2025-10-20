@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="lib/vue.js"></script>
+</head>
+<style>
+     
+</style>
+<body>
+    <div id="box">
+        <!-- change事件失去焦点并且值改变时触发，input值改变就触发 -->
+        <input type="text" v-model="mytext" />
+        <ul>
+            <li v-for="item in datalist" :key="item">
+                {{item}}
+            </li>
+        </ul>
+
+    </div>
+    <script>
+        new Vue({
+            el: '#box',
+            data() {
+                return {
+                    mytext: '',
+                    datalist: ['aaa', 'aac', 'abc', 'bbb', 'bac', 'ccc'],
+                    originlist: ['aaa', 'aac', 'abc', 'bbb', 'bac', 'ccc']
+                }
+            },
+            watch: {
+                mytext(newVal) {
+                    setTimeout(()=> {
+                        this.datalist = this.originlist.filter(item => item.includes(newVal))
+                    }, 2000)
+                }
+            }
+        })
+
+        // 方法： 事件绑定， 可以不用return， 没有缓存
+        // 计算属性（重视结果）： 必须有return，有依赖缓存，同步
+        // watch：监听一个值的改变，不用返回值，同步异步
+    </script>
+</body>
+</html>

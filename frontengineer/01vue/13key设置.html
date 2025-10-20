@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="lib/vue.js"></script>
+</head>
+<body>
+    <!-- vue的原理 -->
+    <!-- 虚拟dom：js对象描述的节点
+         key值：给元素排序，在元素变更时，便于重新复用元素，以最小性能更新dom
+         用数组下标做key，如果从中间删除元素比较麻烦，diff算法是从同一顺序对比
+    
+        底层原理：先用Object.defineProperty的get、set方法拦截，每次修改，
+        set方法拦截到了，通知我的watcher，watcher收录着当前状态在组件所有
+        用到的地方，把所有相关联的组件代码进行更新，在更新过程中，先创建一份
+        新的虚拟dom，在对比老的虚拟dom节点，然后对比过程中以最小的代价找出
+        不同，更新到真实dom中
+        
+    
+        vdom vnode virtual dom virtual node
+    -->
+    <div id="box">
+        
+    </div>
+
+    <script>
+        var vm = new Vue({
+            el: '#box',
+            data() {
+                return {
+                    
+                }
+            }
+        })
+    </script>
+</body>
+</html>

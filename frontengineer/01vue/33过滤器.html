@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="lib/axios.min.js"></script>
+    <script src="lib/vue.js"></script>
+
+</head>
+<style>
+     img{
+        width: 100px;
+     }
+</style>
+<body>
+    <!-- 过滤器在vue3中不支持 -->
+    <div id="box">
+        <button @click="handleAxios">ajax-axios</button>
+
+        <ul>
+            <li v-for="(item, index) in datalist">
+                <img :src="item.poster | imgFilter1 | imgFilter2" />
+                {{item.name}}
+            </li>
+        </ul>
+    </div>
+    <script>
+        Vue.filter('imgFilter1', (url) =>{
+            return url
+        })
+        Vue.filter('imgFilter2', (url) =>{
+            return url
+        })
+        new Vue({
+            el: '#box',
+            data() {
+                return {
+                     datalist: []
+                }
+            },
+            methods: {
+                handleAxios() {
+                    axios.get('./json/maoyan.json')
+                    .then(res => {
+                        console.log(res)
+                        this.datalist = res.data.data.films
+                        console.log(this.datalist)
+                    })
+                    .catch(err => {
+                        console.log(err)
+                    })
+                }
+            }
+        })
+    </script>
+</body>
+</html>

@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="lib/axios.min.js"></script>
+    <script src="lib/vue.js"></script>
+</head>
+<style>
+*{
+    padding: 0;
+    margin: 0;
+}
+ul{
+    list-style: none;
+    width: 100vw;
+    height: 60px;
+    line-height: 60px;
+    display: flex;
+    justify-content: space-between;
+    position: fixed;
+    bottom: 0;
+    text-align: center;
+    background-color: #aaaaaa;
+}
+li{
+    flex: 1;
+}
+
+ /* 进场动画 */
+    .kerwin-enter-active {
+        animation: aaa 1.5s;
+    }
+
+    /* 出场动画 */
+    .kerwin-leave-active {
+        animation: aaa 1.5s reverse;
+    }
+
+
+    /* 过程 */
+    @keyframes aaa {
+        0% {
+            opacity: 0;
+            transform: translateX(100px);
+        }
+        100% {
+            opacity: 1;
+            transform: translateX(0px);
+        }
+    }
+</style>
+<body>
+    <div id="box">
+         <!-- <home v-show="which==='home'"></home>
+         <list v-show="which==='list'"></list>
+         <shopcar v-show="which==='shopcar'"></shopcar> -->
+
+         <!-- <keep-alive>
+            <component :is="which"></component>
+         </keep-alive> -->
+
+         <transition name="kerwin" mode="out-in">
+            <component :is="which"></component>
+         </transition>
+ 
+         <footer>
+            <ul>
+                <li @click="which='home'">首页</li>
+                <li @click="which='list'">列表</li>
+                <li @click="which='shopcar'">购物车</li>
+            </ul>
+         </footer>
+    </div>
+    <script>
+        Vue.component('home', {
+            template: `
+                <div>
+                    <input />    
+                </div>
+            `
+        })
+
+        Vue.component('list', {
+            template: `
+                <div><input />    </div>
+            `
+        })
+
+        Vue.component('shopcar', {
+            template: `
+                <div><input />    </div>
+            `
+        })
+ 
+        new Vue({
+            el: '#box',
+            data() {
+                return {
+                     which: ''
+                }
+            } 
+        })
+    </script>
+</body>
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<script src="lib/vue.global.js"></script>
+<style>
+
+</style>
+<body>
+    <div id="box">
+        {{ 10 + 20 }}
+        {{ myname }}
+
+        <input type="text" v-model="mytext" />
+        <button @click="handleClick">add</button>
+
+        <div :class="classobj">动态切换class-1-对象</div>
+    </div>
+    <script>
+        Vue.createApp({
+            data() {
+                return {
+                    myname: 'kerwin',
+                    mytext: 'tiechui',
+                    classobj: {
+                        aa: true,
+                        bb: true,
+                        cc: false
+                    }
+                }
+            },
+            methods: {
+                handleClick() {
+                    this.classobj.dd = true
+                }
+            }
+        }).mount('#box')
+    </script>
+</body>
+</html>

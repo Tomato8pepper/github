@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="lib/vue.js"></script>
+</head>
+<style>
+     img{
+        width: 100px;
+     }
+</style>
+<body>
+    <!-- xhr是标准、fetch -->
+    <div id="box">
+        <button @click="handleFetch">ajax-fetch</button>
+
+        <ul>
+            <li v-for="(item, index) in datalist">
+                <img :src="item.poster" />
+                {{item.name}}
+            </li>
+        </ul>
+    </div>
+    <script>
+        new Vue({
+            el: '#box',
+            data() {
+                return {
+                     datalist: []
+                }
+            },
+            methods: {
+                handleFetch() {
+                    fetch('./json/maoyan.json')
+                    .then(res => res.json())
+                    .then(res => {
+                        console.log(res)
+                        this.datalist = res.data.films
+                        console.log(this.datalist)
+                    })
+                    .catch(err => {
+                        console.log(err)
+                    })
+                }
+            }
+        })
+
+        
+    </script>
+</body>
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="lib/vue.js"></script>
+</head>
+<body>
+    <!-- 
+        状态一改变，页面就更新
+
+        Object.defineProperty有以下缺点：
+        1. 无法监听es6的Map、Set变化
+        2. 无法监听Class类型的数据
+        3. 对象属性的增加、删除无法监听
+        4. 数组元素的增加、删除也无法监听
+
+        vue3的Proxy已解决
+     -->
+    <div id="box"></div>
+    <script>
+        var box = document.getElementById('box')
+        var obj = {
+            
+        }
+
+        Object.defineProperty(obj, 'myname', {
+            // obj.myname触发
+            get() {
+                console.log('get start')
+            },
+            // obj.myname = 'xx'触发
+            set(newV) {
+                console.log('set start', newV)
+                box.innerText = newV
+            }
+        })
+    </script>
+</body>
+</html>

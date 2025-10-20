@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    /* 进场动画 */
+    .kerwin-enter-active {
+        animation: aaa 1.5s;
+    }
+
+    /* 出场动画 */
+    .kerwin-leave-active {
+        animation: aaa 1.5s reverse;
+    }
+
+
+    /* 过程 */
+    @keyframes aaa {
+        0% {
+            opacity: 0;
+            transform: translateX(100px);
+        }
+        100% {
+            opacity: 1;
+            transform: translateX(0px);
+        }
+    }
+</style>
+<script src="lib/vue.js"></script>
+<body>
+    <div id="box">
+        <input type="text" v-model="mytext" />
+        <button @click="handleAdd()">add</button>
+
+        <ul>
+            <transition-group name="kerwin">
+                <li v-for="(item, index) in datalist" :key="item">
+                    {{item}} - {{index}}
+                    <button @click=handleDel(index)>del</button>
+                </li>
+            </transition-group>
+        </ul>
+
+        <div v-show="!datalist.length">
+            请添加一条数据
+        </div>
+    </div>
+    <script>
+        new Vue({
+            el: '#box',
+            data: {
+                datalist: ['111', '222', '333'],
+                mytext: 'aaa'
+            },
+            methods: {
+                handleAdd() {
+                    this.datalist.push(this.mytext)
+                    this.mytext = ''
+                },
+                handleDel(index) {
+                    console.log(index)
+                    // splice('索引', number, '补充')
+                    this.datalist.splice(index, 1)
+                }
+            }
+        })
+    </script>
+</body>
+</html>

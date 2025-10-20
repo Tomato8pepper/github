@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="../lib/axios.min.js"></script>
+    <script src="../lib/vue.js"></script>
+
+</head>
+<style>
+     
+</style>
+<body>
+    <!-- xhr是标准、fetch -->
+    <div id="box">
+          <navbar @myevent="handleShow()"></navbar>
+          <sidebar v-show="isShow"></sidebar>
+    </div>
+    <script>
+        Vue.component('navbar', {
+            template: 
+                `<div style="backgroundColor: red">
+                     <button @click="handleClick()">显示</button>                    
+                </div>`,
+            methods: {
+                handleClick() {
+                    this.$emit('myevent')
+                }
+            }
+        })
+        Vue.component('sidebar', {
+            template: 
+                `<div >
+                      sidebar                     
+                </div>` 
+             
+        })
+        new Vue({
+            el: '#box',
+            data() {
+                return {
+                    isShow: false
+                }
+            },
+            methods: {
+                handleShow() {
+                    this.isShow = !this.isShow
+                }
+            }
+        })
+    </script>
+</body>
+</html>

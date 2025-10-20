@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="lib/axios.min.js"></script>
+    <script src="lib/vue.js"></script>
+
+</head>
+<style>
+     
+</style>
+<body>
+    <!-- xhr是标准、fetch -->
+    <div id="box">
+         <navbar></navbar>
+    </div>
+    <script>
+        // 全局组件
+        Vue.component('navbar', {
+            template: `
+                <section style="background: red">
+                    <button @click="handleLeft">left</button>
+                    猫眼电影- {{myname}}
+                    <button @click="handleRight">right</button>
+                </section>
+            `,
+            methods: {
+                handleLeft() {
+                    console.log('left')
+                },
+                handleRight() {
+                    console.log('right')
+                }
+            },
+            // data必须是函数写法
+            data() {
+                return {
+                    myname: 'kerwin'
+                }
+            }
+        })
+        new Vue({
+            el: '#box',
+            data() {
+                return {
+                      
+                }
+            },
+            methods: {
+                 
+            }
+        })
+
+        
+    </script>
+</body>
+</html>

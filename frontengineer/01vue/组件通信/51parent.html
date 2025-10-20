@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="../lib/axios.min.js"></script>
+    <script src="../lib/vue.js"></script>
+
+</head>
+<style>
+    
+</style>
+<body>
+     
+    <div id="box">
+       <input type="text"  ref="mytext"/>
+       <div ref="mydiv"></div>
+       <button @click="handleClick">add</button>
+       <kerwin ref="kerwin">
+        
+       </kerwin>
+       <child></child>
+    </div>
+    <script>
+        Vue.component('kerwin', {
+            template: `
+            <div>
+                {{myname}}
+                <button @click="handleKerwin">addSon</button>
+            </div>
+            `,
+            data() {
+                return {
+                    myname: 'child-111111'
+                }
+            },
+            methods: {
+                handleKerwin() {
+                    console.log(this.$parent)
+                    console.log(this.$parent.myname)
+                    console.log(this.$parent.handleClick())
+                }
+            }
+            
+        })
+
+        Vue.component('child', {
+            template: `
+            <div>{{myname}}</div>
+            `,
+            data() {
+                return {
+                    myname: 'child'
+                }
+            },
+            
+        })
+ 
+        new Vue({
+            el: '#box',
+            data() {
+                return {
+                    myname: 'parent'
+                }
+            },
+            methods: {
+                handleClick() {
+                    console.log(this.myname)
+                }
+            }
+        })       
+        
+        // ref 绑定dom节点，拿到的就是dom对象
+        // ref 绑定组件 拿到的就是组件对象
+    </script>
+</body>
+</html>

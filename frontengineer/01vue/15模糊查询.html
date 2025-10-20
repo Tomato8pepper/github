@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<script src="lib/vue.js"></script>
+<body>
+    <div id="box">
+        <!-- change事件失去焦点并且值改变时触发，input值改变就触发 -->
+        <input type="text" @input="handleInput" v-model="mytext" />
+        <ul>
+            <li v-for="item in datalist" :key="item">
+                {{item}}
+            </li>
+        </ul>
+    </div>
+    <script>
+        new Vue({
+            el: '#box',
+            data() {
+                return {
+                    mytext: '',
+                    datalist: ['aaa', 'aac', 'abc', 'bbb', 'bac', 'ccc'],
+                    originlist: ['aaa', 'aac', 'abc', 'bbb', 'bac', 'ccc']
+                }
+            },
+            methods: {
+                handleInput() {
+                    this.datalist = this.originlist.filter(item => item.includes(this.mytext))
+                }
+            }
+        })
+    </script>
+
+    <input type="text" @input="handleInput"/>
+    <button @click="handleClick()" >button</button>
+</body>
+</html>
