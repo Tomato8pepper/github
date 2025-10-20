@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    .box{
+        width: 300px;
+        height: 300px;
+        border: 5px solid red;
+        margin: 50px auto;
+
+        /* 设置边框图片 */
+        border-image-source: url('./img/1.jpg');
+
+        /* 边框图片裁切 */
+        border-image-slice: 20;
+
+        /* 设置边框图片的平铺方式 */
+        border-image-repeat: stretch;
+        /* border-image-repeat: round; */
+        border-image-repeat: repeat;
+
+        border-image-width: 5;
+    }
+</style>
+<body>
+    <div class="box"></div>
+</body>
+</html>

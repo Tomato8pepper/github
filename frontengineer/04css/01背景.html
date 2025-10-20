@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box {
+            width: 300px;
+            height: 300px;
+            border: 10px dashed #aaa;
+            padding: 10px;
+
+            /* 内容+内边距+边框 */
+            /* background-color: red; */
+            background: pink url('./img/logo.png') no-repeat;
+            /* 背景图片以内边距对齐 */
+            background-origin: padding-box;
+            /* 背景图片以内容对齐 */
+            background-origin: content-box;
+            /* 背景图片以边框对齐 */
+            background-origin: border-box;
+        }
+    </style>
+</head>
+<body>
+    <div class="box"></div>
+</body>
+</html>

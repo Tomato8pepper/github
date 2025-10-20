@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    .box{
+        width: 200px;
+        height: 200px;
+        border: 1px solid red;
+        background: url('./img/logo.png') no-repeat;
+        
+        /* 设置背景图片大小 */
+        background-size: 200px 200px;
+
+        /* 将背景图片按照原来的缩放比，铺满容器 */
+        background-size: cover;
+
+        /* 将背景图片按照原来的缩放比，完整显示到容器中，不确定容器回填充满 */
+        background-size: contain;
+    }
+</style>
+<body>
+    <div class="box"></div>
+</body>
+</html>

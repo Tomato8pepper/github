@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    /* 被锚链接指向 */
+    p:target{
+        color: red;
+    }
+    p::selection{
+        color: blue;
+        background-color: pink;
+    }
+</style>
+<body>
+    <P>文字</P>
+    <P>文字</P>
+    <P>文字</P>
+    <P>文字</P>
+    <P>文字</P>
+    <P>文字</P>
+    <P>文字</P>
+    <P>文字</P>
+    <P>文字</P>
+    
+    <P id="test">文字</P>
+
+    <a href="#test" >文字</a>
+</body>
+</html>

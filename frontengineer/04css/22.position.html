@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    *{
+        margin: 0;
+        padding: 0;
+    }
+    html{
+        /* overflow: hidden; */
+    }
+    .box{
+        width: 100px;
+        height: 100px;
+        text-align: center;
+        line-height: 100px;
+        background-color: red;
+        position: static;
+        top: 100px;
+    }
+    .box1{
+        width: 100px;
+        height: 100px;
+        text-align: center;
+        line-height: 100px;
+        background-color: red;
+        position: fixed;
+        top: 50px;
+        right: 0px;
+    }
+    .box2{
+        width: 100px;
+        height: 100px;
+        text-align: center;
+        line-height: 100px;
+        background-color: red;
+        position: relative;
+        top: 50px;
+        right: 50px;
+    }
+    .box3{
+        width: 100px;
+        height: 100px;
+        text-align: center;
+        line-height: 100px;
+        background-color: red;
+        position: absolute;
+        top: 50px;
+        right: 50px;
+    }
+    .box4{
+        width: 100px;
+        height: 100px;
+        text-align: center;
+        line-height: 100px;
+        background-color: red;
+        position: sticky;
+        top: 50px;
+        right: 50px;
+    }
+    .box5{
+        width: 100px;
+        height: 100px;
+        text-align: center;
+        line-height: 100px;
+        background-color: red;
+        position: inherit;
+        top: 50px;
+        right: 50px;
+    }
+</style>
+<body>
+    <!-- 
+        static定位：html元素的默认值，遵循正常的文档流，静态定位的元素不会受到
+        top、bottom、left、right影响 
+    -->
+    <div class="box">0</div>
+
+    <!-- 
+        fixed定位：元素的位置相对于窗口是固定位置，窗口滚动它不会移动
+    -->
+    <div class="box1">1</div>
+
+    <!-- 
+        relative定位：相对于自身的上下左右边框移动 
+    -->
+    <div class="box2">2</div>
+
+    <!-- 
+        absolute定位：绝对定位是相对于已定位的父元素，如果没有就是html 
+    -->
+    <div class="box3">3</div>
+
+    <!-- 
+        sticky定位：基于用户滚动位置来定位，粘性定位的元素是依赖于用户的滚动 
+    -->
+    <div class="box4">4</div>
+
+    <!-- 
+        inherit：继承父元素的定位 
+    -->
+    <div class="box5">5</div>
+</body>
+</html>

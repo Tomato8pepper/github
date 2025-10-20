@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    /* 属性选择器 */
+    p[class] {
+        color: red;
+    }
+    /* 类名为one */
+    p[class = 'one'] {
+        color: red;
+    }
+    /* 以字母o开始 */
+    p[class^='o'] {
+        color: red;
+    }
+    /* 包含字母o */
+    p[class*='o'] {
+        color: red;
+    }
+    /* 以字母o结束 */
+    p[class$='o'] {
+        color: red;
+    }
+</style>
+<body>
+    <div class="one">文字</div>
+    <p class="one">段落</p>
+    <p class="two">段落</p>
+</body>
+</html>
