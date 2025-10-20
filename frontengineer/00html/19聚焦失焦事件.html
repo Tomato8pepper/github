@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" onfocus="handleFocus()" onblur="handleBlur()"/> 
+
+    <input type="text" onfocus="console.log('聚焦1')" onblur="console.log('失焦1')"/> 
+
+    <input type="text" />
+
+    <script>
+        function handleFocus() {
+            console.log('聚焦')
+        }
+
+        function handleBlur() {
+            console.log('失焦')
+        }
+
+         
+        document.getElementsByTagName('input')[2].addEventListener('focus', () => {
+            console.log('聚焦2')
+        })
+        document.getElementsByTagName('input')[2].addEventListener('blur', () => {
+            console.log('失焦2')
+        })
+
+    </script>
+</body>
+</html>

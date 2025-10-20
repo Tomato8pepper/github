@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+
+	<!-- 
+	form属性：	
+		autocomplete=on | off          自动完成
+		novalidate=true | false        是否关闭校验
+
+	input属性：
+		*autofocus  ： 自动获取焦点
+		form：		
+		list：
+		multiple：	 实现多选效果
+		*placeholder ： 占位符  （提示信息）
+		*required：    必填项 
+	-->
+
+
+
+	
+	<form action="test.php" method="get"  id="test">
+		
+	 	<!--  
+		 <input type="text" name="em" autofocus placeholder="请输入您要的物品" required>
+
+
+	 	 <input type="submit" name="">
+
+
+	 	 <select multiple>
+	 	 	<option>12</option>
+	 	 	<option>12</option>
+	 	 	<option>12</option>
+	 	 </select> -->
+
+
+	 	 <input type="text" list="abc"/>
+	 	 <datalist id="abc">
+	 	 	<option value="1">VUE</option>
+	 	 	<option value="2">REACT</option>
+	 	 	<option value="3">WX</option>
+	 	 </datalist>
+	</form>
+
+	<!-- <input type="text" name="uname" value="用户名" form="test"> -->
+</body>
+</html>

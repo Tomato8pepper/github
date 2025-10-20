@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // window.navigator.geolocation.getCurrentPosition(suss, err)
+        // function suss (msg) {
+        //     console.log(msg)
+        // }
+        // function err (msg) {
+        //     console.log(msg)
+        // }
+
+
+        // 实时获取地理位置
+        window.navigator.geolocation.watchPosition(suss, err)
+
+        function suss(msg, position) {
+            console.log(msg)
+            console.dir(position)
+
+            var wd = position.coords.latitude
+            var jd = position.coords.longitude
+
+            // 百度地图API功能
+            // var map = new BMap.Map("allmap")
+            // var point = new BMap.Point(jd, wd)
+            // map.centerAndZoom(point, 15)
+
+            // 创建小狐狸
+            // var pt = point
+            // var myIcon = new BMap.Icon('http://lbsyun.baidu.com/jsdemo/img/fox.git', new BMap.Size(300, 157))
+            // var marker2 = new BMap.Marker(pt, {icon:myIcon})
+            // map.addOverlay(marker2)
+        }
+        function err(msg) {
+            console.log(msg)
+        }
+    </script>
+</body>
+</html>

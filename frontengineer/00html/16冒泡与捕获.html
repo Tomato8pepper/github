@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<!-- 
+    冒泡事件：事件由子元素传递到父元素的过程叫做冒泡
+    捕获事件：事件由父元素传递到子元素的过程叫做捕获
+-->
+<body>
+    <div class="d1">
+        最外层
+        <div class="d2">
+            中间层
+            <div class="d3">最内层</div>
+        </div>
+    </div>
+</body>
+<script>
+    // 当点击某一个div时，事件从最外开始到最内层再到最外层执行，也就是捕获、冒泡，默认执行冒泡事件
+    var d1 = document.querySelector('.d1');
+    var d2 = document.querySelector('.d2');
+    var d3 = document.querySelector('.d3');
+
+    // 点击d1时打印最外层；
+    // 点击d2时打印中间层、最外层；
+    // 点击d3时打印最内层、中间层、最外层
+    // d1.onclick = function (e) {
+    //     console.log('最外层')
+    //     // 阻止冒泡
+    //     // 点击d1时打印最外层；
+    //     // 点击d2时打印中间层、最外层；
+    //     // 点击d3时打印最内层、中间层、最外层
+    //     // e.stopPropagation();
+    // }
+    // d2.onclick = function (e) {
+    //     console.log('中间层')
+    //     // 阻止冒泡
+    //     // 点击d1时打印最外层；
+    //     // 点击d2时打印中间层；
+    //     // 点击d3时打印最内层、中间层
+    //     // e.stopPropagation();
+    // }
+    // d3.onclick = function (e) {
+    //     console.log('最内层')
+    //     // 阻止冒泡
+    //     // 点击d1时打印最外层；
+    //     // 点击d2时打印中间层、最外层；
+    //     // 点击d3时打印最内层
+    //     e.stopPropagation();
+    // }
+
+
+    // 点击d1时打印最外层；
+    // 点击d2时打印最外层、中间层；
+    // 点击d3时打印最外层、中间层、最内层
+    d1.addEventListener('click', (e) => {
+        console.log('最外层');
+    // 阻止捕获
+    // 点击d1时打印最外层；
+    // 点击d2时打印最外层；
+    // 点击d3时打印最外层
+    //     e.stopPropagation();
+    }, true);
+    d2.addEventListener('click', (e) => {
+        console.log('中间层');
+    // 阻止捕获
+    // 点击d1时打印最外层；
+    // 点击d2时打印最外层、中间层
+    // 点击d3时打印最外层、中间层
+    //     e.stopPropagation();
+    }, true);
+    d3.addEventListener('click', (e) => {
+        console.log('最内层');
+    // 阻止捕获
+    // 点击d1时打印最外层；
+    // 点击d2时打印最外层、中间层；
+    // 点击d3时打印最外层、中间层、最内层
+        e.stopPropagation();
+    }, true);
+
+//     document.addEventListener('event', (e) => {
+//         // 阻止提交表单 && href标签阻止自动跳转
+//         // e.preventDefault();
+//         // 既阻止冒泡又阻止默认
+//         // return false;
+//     }, false) //false为冒泡时触发，true为捕获时触发
+// </script>
+</html>
