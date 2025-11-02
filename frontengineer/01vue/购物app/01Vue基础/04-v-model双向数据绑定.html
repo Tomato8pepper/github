@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="app">
+        <input v-model="msg" />
+
+        <input :value="msg" @input="handleInput" />
+        {{msg}}
+    </div>
+    <script src="./node_modules/vue/dist/vue.js"></script>
+    <script>
+
+        // 双向数据绑定，model改变view改变， view改变model改变
+        new Vue({
+            el: '#app',
+            template: '',
+            data: function() {
+                return {
+                    msg: 'hello双向绑定'
+                }
+            },
+            methods: {
+                handleInput(e) {
+                    this.msg = e.target.value
+                }
+            }
+        })
+    </script>
+</body>
+</html>

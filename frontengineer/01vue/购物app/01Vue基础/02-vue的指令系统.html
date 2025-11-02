@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="app"></div>
+    <script src="./node_modules/vue/dist/vue.js"></script>
+
+    <script>
+        // v-if是真正的条件渲染，dom切换是销毁和重建，一开始条件为真就开始渲染条件块
+        // v-show不管初始条件真假，元素总是会被渲染，并且只是简单地基于css样式切换
+
+        new Vue({
+            el: '#app',
+            template: `<div >
+                    <div v-text='msg'></div>
+                    <div v-html='msg2'></div>
+                    <div v-if='isShow'>hhhh</div>
+                    <div v-show='isShow'>hhhh</div>
+                    <div>
+                        <div v-if='Math.random() > 0.5'>此值大于0.5</div>
+                        <div v-else>此值小于0.5</div>    
+                    </div>
+                    <ul>
+                        <li v-for='(item, index) in menuList'>
+                            <h3>{{item.id}}</h3>
+                            <h5>{{item.name}}</h5>
+                            <h4>{{item.price}}</h4>    
+                        </li>
+                    </ul>
+
+                    <ul>
+                        <li v-for='(value, key) in object'>
+                            {{key}} - {{value}}    
+                        </li>    
+                    </ul>
+                </div>`,
+            data: function() {
+                return {
+                    msg: '指令系统',
+                    msg2: '<h2>指令系统</h2>',
+                    isShow: false,
+                    menuList: [
+                        { id: 1, name: '大腰子', price: 50 },
+                        { id: 2, name: '宫保鸡丁', price: 60 }, 
+                        { id: 3, name: '烧黄花鱼', price: 30 }
+                    ],
+                    object: {
+                        name: '图',
+                        age: 18,
+                        fav: 'sing'
+                    }
+                }
+            }
+        })
+    </script>
+</body>
+</html>
