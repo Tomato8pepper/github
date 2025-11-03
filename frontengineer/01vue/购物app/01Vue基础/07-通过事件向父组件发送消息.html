@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    *{
+        margin: 0;
+        padding: 0;
+    }
+    .head{
+        width: 100%;
+        height: 80px;
+        background-color: purple;
+    }
+    .main2{
+        width: 100%;
+        height: 1000px;
+    }
+    .main2 .aside{
+        float: left;
+        width: 30%;
+        height: 100%;
+        background-color: green;
+    }
+    .main2 .content{
+        height: 100%;
+        background-color: yellow;
+    }
+</style>
+<body>
+    <div id="app"></div>
+    <script src="./node_modules/vue/dist/vue.js"></script>
+    <script>
+        // 全局组件
+        Vue.component('Vbtn', {
+            template: `
+                <button>按钮</button>
+            `
+        })
+
+
+        var Vheader = {
+            template: `<div class='head'>我是头部组件
+                             <button @click='changeFontSize'>字体变大</button>
+                        </div>`,
+            methods: {
+                changeFontSize() {
+                    this.$emit('change', 'data')
+                }
+            }
+        }
+
+        var Vaside = {
+            template: `<div class='aside'>我是侧边栏组件
+                             
+                        </div>`
+        }
+
+        var Vcontent = {
+            template: `<div class='content'>我是内容组件
+                             <ul>
+                                <li v-for='item in posts'>
+                                    <h3>{{item.title}}</h3>
+                                    <h4>{{item.content}}</h4>
+                                </li>    
+                            </ul>
+                        </div>`,
+            props: ['posts']
+        }
+
+        // 局部组件
+        var App = {
+            template: `
+                <div class='main' style='color: blue;' :style='{fontSize: postFontSize + "em"}'>
+                    <Vheader @change='changeFontSize' />
+                    <div class='main2'>
+                        <Vaside />
+                        <Vcontent :posts='post' />
+                    </div>
+                </div>
+            `,
+            data() {
+                return {
+                    post: [
+                        { id: 1, title: '第一篇', content: '天王盖地虎' },
+                        { id: 2, title: '第二篇', content: '宝塔镇河妖' },
+                        { id: 3, title: '第三篇', content: '小鸡炖蘑菇' }
+                    ],
+                    // 1em = 16px
+                    postFontSize: 1,
+                }
+            },
+            components: {
+                Vheader,
+                Vaside,
+                Vcontent
+            },
+            methods: {
+                changeFontSize(da) {
+                    this.postFontSize+=.1
+                    console.log(da)
+                }
+            }
+        }
+
+        new Vue({
+            el: '#app',
+            template: `<App></App>`,
+            data: function() {
+                return {}
+            },
+            components: {
+                App
+            }
+        })
+    </script>
+</body>
+</html>

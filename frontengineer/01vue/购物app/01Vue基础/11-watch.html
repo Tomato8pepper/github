@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="app">
+        <input v-model='msg' />
+        <h3>{{msg}}</h3>
+        <h4>{{stus[0].name}}</h4>
+        <button @click='stus[0].name="rose"'>change name</button>
+    </div>
+    <script src="./node_modules/vue/dist/vue.js"></script>
+    <script>
+        new Vue({
+            el: '#app',
+            // template: `<div></div>`,
+            data: function() {
+                return {
+                    msg: 'ss',
+                    stus: [{ name: 'jack' }]
+                }
+            },
+            watch: {
+                msg(newV, oldV) {
+                    console.log('new', newV, 'old', oldV)
+                },
+                stus: {
+                    deep: true,
+                    handler(newV, oldV) {
+                        console.log('new', newV, 'old', oldV)
+                    }
+                }
+            }
+        })
+    </script>
+</body>
+</html>
