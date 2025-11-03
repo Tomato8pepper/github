@@ -53,14 +53,24 @@
                 }
             },
             computed: {
-                getCurrentSongSrc() {
-                    // 默认只有getter
-                    return this.musicData[this.currentIndex].songSrc
+                // getCurrentSongSrc() {
+                //     return this.musicData[this.currentIndex].songSrc
+                // }
+                
+                getCurrentSongSrc: {
+                    set(newV) {
+                        this.currentIndex = newV
+                    },
+                    get() {
+                        return this.musicData[this.currentIndex].songSrc
+                    }
                 }
             },
             methods: {
                 handleClick(idx) {
-                    this.currentIndex = idx
+                    // this.currentIndex = idx
+
+                    this.getCurrentSongSrc = idx
                 }
             }
         })

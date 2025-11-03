@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="app">
+        <App></App>
+    </div>
+    <script src="./node_modules/vue/dist/vue.js"></script>
+    <script>
+        // 局部组件
+        var Test = {
+            template: `
+                <div>
+                    {{msg}}
+                    <button @click='handleClick'>修改数据</button>
+                </div>
+            `,
+            data() {
+                return {
+                    msg: 'hello world'
+                }
+            },
+            methods: {
+                handleClick() {
+                    this.msg = 'msg改变了'
+                }
+            },
+            beforeCreate() {
+                // 组件创建之前
+                console.log(this.msg) // undefined
+            },
+            created() {
+                // 组件创建之后，可以使用data函数中的数据，可以发送Ajax请求
+                console.log(this.msg) // hello world
+                this.msg = '改变了'
+            },
+            beforeMount() {
+                // 挂载数据到dom之前会调用
+                console.log(document.getElementById('app'))
+            },
+            mounted() {
+                // 挂载数据到dom之后会调用  vue可以使用指令系统作用的dom
+                console.log(document.getElementById('app'));
+                
+            },
+            beforeUpdate() {
+                // 在更新dom之前 调用此钩子函数， 可以获取更新之前的dom
+                console.log(document.getElementById('app').innerHTML)
+            },
+            updated() {
+                // 在更新dom之后 调用此钩子函数， 可以获取最新的dom
+                console.log(document.getElementById('app').innerHTML)
+            },
+            beforeDestroy() {
+                // 组件销毁之前调用
+                console.log('beforeDestroy')
+            },
+            destroyed() {
+                // 组件销毁之后调用
+                console.log('destroyed')
+            },
+            // keep-alive内置组件，能在组建的切换过程中将状态保存在内存当中，防止重复渲染dom
+            activated() {
+                console.log('组件被激活了')
+            },
+            deactivated() {
+                console.log('组件被停用了')
+            }
+
+        }
+
+        var App = {
+            template: `
+                <div>
+                    <keep-alive>
+                        <Test v-if='isShow'></Test>    
+                    </keep-alive>
+                    <button @click='isShow=!isShow'>改变生死</button>
+                </div>
+            `,
+            data() {
+                return {
+                    isShow: true
+                }
+            },
+            components: {
+                Test
+            }
+        }
+
+        
+        new Vue({
+            el: '#app',
+            data: function() {
+                return {
+                    
+                }
+            },
+            components: {
+                App
+            }
+        })
+    </script>
+</body>
+</html>
