@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- 
+        路由原理：
+            1. 传统的开发方式url改变之后，立刻发送请求响应整个页面，有资源过多，可能会产生白屏
+
+            2. SPA（Single Page Application）单页面应用
+                锚点值改变之后不会立刻发送请求，而是在某个合适的时机，发送Ajax请求，局部改变页面
+
+                优点：页面不立刻跳转，用户体验好
+
+                
+    -->
+                <a href="#login" >登录页面</a>
+                <a href="#register" >登录页面</a>
+                <div id="app"></div>
+
+                <script>
+                    var oDiv = document.getElementById('app')
+                    window.onhashchange = function() {
+                        console.log(location.hash)
+
+                        switch(location.hash) {
+                            case '#login':
+                                oDiv.innerHTML = '<h2>我是登录页面</h2>'
+                                break
+                            case '#register':
+                                oDiv.innerHTML = '<h2>我是注册页面</h2>'
+                            default:
+                                break
+                        }
+                        
+                    }
+                </script>
+</body>
+</html>
