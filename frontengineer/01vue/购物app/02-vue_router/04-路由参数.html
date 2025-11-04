@@ -14,16 +14,29 @@
 
      <script>
 
-        var Login = {
+        // 地址栏 路由范式
+        // 1. xx.html#/user/1   params动态路由参数
+        // 2. xx.html#/user?userId=1   query
+
+        var UserParams = {
             template: `
-                <div>我是登录页面</div>
-            `
+                <div>我是用户1</div>
+            `,
+            created() {
+                console.log(this.$router)
+                console.log(this.$route)
+                
+            }
         }
 
-        var Register = {
+        var UserQuery = {
             template: `
-                <div>我是注册页面</div>
-            `
+                <div>我是用户2</div>
+            `,
+            created() {
+                console.log(this.$router)
+                console.log(this.$route)
+            }
         }
 
         // 2.1 让Vue使用vue-router，如果Vue是一个局部作用域的对象，那么必须Vue.use(VueRouter)
@@ -35,24 +48,24 @@
             routes: [
                 // 2.4 路由匹配的规则
                 {
-                    path: '/login',
-                    component: Login
+                    path: '/user/:id',
+                    name: 'userP',
+                    component: UserParams
                 },
                 {
-                    path: '/register',
-                    component: Register
+                    path: '/user',
+                    name: 'userQ',
+                    component: UserQuery
                 }
             ]
         })
 
-        // 抛出两个全局组件 router-link、 router-view, 以及两个路由对象$router路由操作、$route路由信息挂载到了Vue实例化对象上
-        // router-view路由组件的出口
+         
         var App = {
-            // router-link默认会被渲染成a标签，to默认会被渲染成href属性
             template: `
                 <div>
-                    <router-link to='/login'>登录</router-link>
-                    <router-link to='/register'>注册</rotuer-link>     
+                    <router-link :to='{name: "userP", params: {id: 1}}'>用户1</router-link>
+                    <router-link :to='{name: "userQ", query: {userId: 2}}'>用户2</rotuer-link>     
 
                     
                     <router-view />

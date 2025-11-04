@@ -36,10 +36,12 @@
                 // 2.4 路由匹配的规则
                 {
                     path: '/login',
+                    name: 'login',
                     component: Login
                 },
                 {
                     path: '/register',
+                    name: 'register',
                     component: Register
                 }
             ]
@@ -51,8 +53,8 @@
             // router-link默认会被渲染成a标签，to默认会被渲染成href属性
             template: `
                 <div>
-                    <router-link to='/login'>登录</router-link>
-                    <router-link to='/register'>注册</rotuer-link>     
+                    <router-link :to='{name: "login"}'>登录</router-link>
+                    <router-link :to='{name: "register"}'>注册</rotuer-link>     
 
                     
                     <router-view />
