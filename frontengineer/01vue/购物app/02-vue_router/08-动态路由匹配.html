@@ -18,40 +18,46 @@
         // 1. xx.html#/user/1   params动态路由参数
         // 2. xx.html#/user?userId=1   query
 
-        var Song = {
+         
+        var comDesc = {
             template: `
-                <div>我是歌曲组件</div>
+                <div>
+                    {{msg}}
+                </div>
             `,
+            data() {
+                return {
+                    msg: ''
+                }
+            },
             created() {
-                console.log(this.$router)
-                console.log(this.$route)
-                
-            }
-        }
-
-        var Movie = {
-            template: `
-                <div>我是电影组件</div>
-            `,
-            created() {
-                console.log(this.$router)
-                console.log(this.$route)
+                this.msg = '安卓'
+            },
+            watch: {
+                '$route'(to, from) {
+                    this.msg = to.params.id
+                }
             }
         }
 
         
-        var Home = {
+        var Timeline = {
             template: `
                 <div>
-                    首页内容
-                    </br>
+                     
                     
-                    <router-link to="/home/song">歌曲</router-link>
-                    <router-link to="/home/movie">电影</router-link>
+                    <router-link :to='{ name: "comDesc", params:{id: "andorid"}}'>安卓</rotuer-link>     
+                    <router-link :to='{ name: "comDesc", params:{id: "frontend"}}'>前端</rotuer-link>    
 
                     <router-view />
 
                 </div>
+            `
+        }
+
+        var Pins = {
+            template: `
+                <div></div>
             `
         }
 
@@ -64,19 +70,21 @@
             routes: [
                 // 2.4 路由匹配的规则
                 {
-                    path: '/home',
-                    name: 'home',
-                    component: Home,
+                    path: '/timeline',
+                    name: 'timeline',
+                    component: Timeline,
                     children: [
                         {
-                            path: 'song',
-                            component: Song
-                        },
-                        {
-                            path: 'movie',
-                            component: Movie
-                        }
+                            path: '/timeline/:id',
+                            name: 'comDesc',
+                            component: comDesc
+                        } 
                     ]
+                },
+                {
+                    path: '/pins',
+                    name: 'pins',
+                    component: Pins 
                 } 
             ]
         })
@@ -87,8 +95,8 @@
             template: `
                 <div>
                     
-                    <router-link :to="{name: 'home'}">首页</rotuer-link>     
-
+                    <router-link :to='{ name: "timeline"}'>首页</rotuer-link>     
+                    <router-link :to='{ name: "pins"}'>沸点</rotuer-link>    
                     
                     <router-view />
                 </div>
