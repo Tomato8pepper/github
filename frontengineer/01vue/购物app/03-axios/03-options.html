@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+    <!-- 1. 先引入vue.js -->
+    <script src="./node_modules/vue/dist/vue.min.js"></script>
+    <script src="./node_modules/axios/dist/axios.js"></script>
+<body>
+    <div id="app">
+         
+    </div>  
+    <script>
+        Vue.prototype.$axios = axios
+
+         var App = {
+            template: `
+                <div>
+                     <button @click='sendAjax'>发请求</button>
+                </div>
+            `,
+            methods: {
+                sendAjax() {
+                    this.$axios.defaults.baseURL = 'http://127.0.0.1:8888'
+                    this.$axios.get('', { params: { id: 1 }, transformResponse: [
+                        function (data) {
+                            return data
+                        }
+                    ]})
+                    .then(res => {
+                        console.log(res)
+                    })
+                    .catch(err => {
+                        console.log(err)
+                    })
+                }
+            }
+         }
+
+         new Vue({
+            el: '#app',
+            template: '<App />',
+            components: {
+                App
+            },
+            
+         })
+    </script>
+
+
+</body>
+</html>

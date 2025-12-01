@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+    <!-- 1. 先引入vue.js -->
+    <script src="./node_modules/vue/dist/vue.min.js"></script>
+    <script src="./node_modules/axios/dist/axios.js"></script>
+<body>
+    <div id="app">
+         
+    </div>  
+    <script>
+        Vue.prototype.$axios = axios
+
+         var App = {
+            data() {
+                return {
+                    res1: '',
+                    res2: ''
+                }
+            },
+            template: `
+                <div>
+                    响应1: {{res1}}
+                    响应2: {{res2}}
+                     <button @click='sendAjax'>合并请求</button>
+                </div>
+            `,
+            methods: {
+                sendAjax() {
+                    this.$axios.defaults.baseURL = 'http://127.0.0.1:8888/'
+                    var q1 = this.$axios.get('')
+                    var q2 = this.$axios.post('add', 'a=1')
+
+                    this.$axios.all([q1, q2])
+                    .then(this.$axios.spread((res1, res2) => {
+                        this.res1 = res1.data
+                        this.res2 = res2.data
+                    }))
+                    .catch(err => {
+                        // 其中一个失败就走这
+                        console.log(err)
+                        
+                    })
+                }
+            }
+         }
+
+         new Vue({
+            el: '#app',
+            template: '<App />',
+            components: {
+                App
+            },
+            
+         })
+    </script>
+
+
+</body>
+</html>
