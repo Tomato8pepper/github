@@ -24,16 +24,32 @@
             methods: {
                 sendAjax() {
                     this.$axios.defaults.baseURL = 'http://127.0.0.1:8888'
-                    this.$axios.get('', { params: { id: 1 }, transformResponse: [
-                        function (data) {
-                            return data
-                        }
-                    ]})
+                    this.$axios.get('', { params: { id: 1 }, 
+                        // 在传递给then, catch之前修改数据
+                        transformResponse: [
+                            function (data) {
+                                console.log(typeof data)
+                                data = JSON.parse(data)
+                                return data
+                            }
+                        ]
+                    })
                     .then(res => {
                         console.log(res)
                     })
                     .catch(err => {
                         console.log(err)
+                    })
+
+                    this.$axios.post('/add', 'name=jack', {
+                        // 传递给后端的时候允许修改数据
+                        transformRequest: [
+                            function (data) {
+                                console.log(data)
+                                data='name=rose'
+                                return data
+                            }
+                        ]
                     })
                 }
             }
