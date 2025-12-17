@@ -36,10 +36,12 @@
                     var q2 = this.$axios.post('add', 'a=1')
 
                     this.$axios.all([q1, q2])
-                    .then(this.$axios.spread((res1, res2) => {
-                        this.res1 = res1.data
-                        this.res2 = res2.data
-                    }))
+                    .then(
+                        this.$axios.spread((res1, res2) => {
+                            this.res1 = res1.data
+                            this.res2 = res2.data
+                        })
+                    )
                     .catch(err => {
                         // 其中一个失败就走这
                         console.log(err)
