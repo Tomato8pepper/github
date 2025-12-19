@@ -5,3 +5,7 @@
 ## npm
 ### 安装固定版本的库
 - npm install vue@2
+- npm init --yes
+- npm i webpack --save-dev
+- npm i css-loader style-loader -D
+- npm i url-loader file-loader -D

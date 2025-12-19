@@ -36,14 +36,13 @@
 
                     fd.append('file', this.file)
 
-                    this.$axios.post('upload', fd, {
+                    this.$axios.post('upload', fd, 
+                    {
                         onUploadProgress: (progressEvent) => {
                             // 对原生进度事件的处理
                             console.log(progressEvent)
-                            var progress = progressEvent.loaded/progressEvent.total*100
-                            this.$nextTick(() => {
-                                this.rate = Math.ceil(progress)
-                            })
+                            var progress = (progressEvent.loaded / progressEvent.total) * 100
+                            this.rate = Math.ceil(progress)
                         }
                     })
                     .then(res => {

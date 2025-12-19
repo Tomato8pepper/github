@@ -24,7 +24,9 @@
             methods: {
                 sendAjax() {
                     this.$axios.defaults.baseURL = 'http://127.0.0.1:8888'
-                    this.$axios.get('', { params: { id: 1 }, 
+                    this.$axios.get('', 
+                    { 
+                        params: { id: 1 }, 
                         // 在传递给then, catch之前修改数据
                         transformResponse: [
                             function (data) {

@@ -21,29 +21,42 @@
                       上传进度：{{rate}}%
                       选择文件： <input type="file" name="file" @change="changeHandler" />
                       <button @click="sendAjax">发送请求</button>
+                      <button @click="cancel">取消请求</button>
+                      <button @click="resume">续传</button>
                 </div>
             `,
             data() {
                 return {
                     file: {},
-                    rate: 0
+                    rate: 0,
+                    source: null,
+                    currentLoaded: 0
                 }
             },
             methods: {
                 sendAjax() {
                     this.$axios.defaults.baseURL = 'http://127.0.0.1:8888/'
+                    var CancelToken = this.$axios.CancelToken
+                    var source = CancelToken.source()
+                    this.source = source
+                    
                     var fd = new FormData()
 
                     fd.append('file', this.file)
 
                     this.$axios.post('upload', fd, {
+                        // 携带取消标识
+                        cancelToken: source.token,  
                         onUploadProgress: (progressEvent) => {
                             // 对原生进度事件的处理
                             console.log(progressEvent)
+                            this.currentLoaded = progressEvent.loaded
+
                             var progress = progressEvent.loaded/progressEvent.total*100
-                            this.$nextTick(() => {
-                                this.rate = Math.ceil(progress)
-                            })
+                            // this.$nextTick(() => {
+                            //     this.rate = Math.ceil(progress)
+                            // })
+                            this.rate = Math.ceil(progress)
                         }
                     })
                     .then(res => {
@@ -55,8 +68,41 @@
                      
                 },
                 changeHandler(e) {
-                    console.log(e.target.files[0])
                     this.file = e.target.files[0]
+                },
+                cancel() {
+                    this.source.cancel('取消请求')
+                },
+                resume() {
+                    var fileData = this.file.slice(this.currentLoaded, this.file.size)
+
+                    var fd = new FormData()
+
+                    fd.append('file', fileData)
+
+                    this.$axios.defaults.baseURL = 'http://127.0.0.1:8888/';
+
+                    this.$axios.post('upload', fd, {
+                        // 携带取消标识
+                        cancelToken: this.source.token,  
+                        onUploadProgress: (progressEvent) => {
+                            // 对原生进度事件的处理
+                            console.log(progressEvent)
+
+                            this.currentLoaded += progressEvent.loaded
+                            var progress = this.currentLoaded/progressEvent.total*100
+                            // this.$nextTick(() => {
+                            //     this.rate = Math.ceil(progress)
+                            // })
+                            this.rate = Math.ceil(progress)
+                        }
+                    })
+                    .then(res => {
+                        console.log(res)
+                    })
+                    .catch(err => {
+                        console.log(err)
+                    })
                 }
             }
          }
@@ -66,11 +112,8 @@
             template: '<App />',
             components: {
                 App
-            },
-            
+            },  
          })
     </script>
-
-
 </body>
 </html>
