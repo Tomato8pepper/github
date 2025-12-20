@@ -4,6 +4,8 @@
 
 ## npm
 ### 安装固定版本的库
+- npm uninstall vue
+
 - npm install vue@2
 - npm init --yes
 - npm i webpack --save-dev

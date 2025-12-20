@@ -6,13 +6,17 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "webpack",
-    "dev": "webpack --config ./webpack.dev.config.js",
+    "dev": "webpack-dev-server --open --hot --inline --config ./webpack.dev.config.js",
     "prod": "webpack --config ./webpack.prod.config.js"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "babel-core": "^6.26.3",
+    "babel-loader": "^7.1.5",
+    "babel-plugin-transform-runtime": "^6.23.0",
+    "babel-preset-env": "^1.7.0",
     "css-loader": "^0.28.11",
     "file-loader": "^0.11.2",
     "html-webpack-plugin": "^0.4.0",
@@ -20,6 +24,7 @@
     "less-loader": "^2.2.3",
     "style-loader": "^0.23.1",
     "url-loader": "^0.6.2",
-    "webpack": "^3.12.0"
+    "webpack": "^3.12.0",
+    "webpack-dev-server": "^2.11.5"
   }
 }
