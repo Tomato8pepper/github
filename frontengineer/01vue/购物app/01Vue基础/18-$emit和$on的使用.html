@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="app">
+        <dom-a></dom-a>
+        <dom-b></dom-b>
+        <dom-c></dom-c>
+    </div>
+    <script src="vue.js"></script>
+    <script>
+        var A = {
+            data() {
+                return {
+                    a: '我是a组件中的数据'
+                }
+            },
+            template: `
+                <div>
+                    <span>我是A组件的数据 -> {{a}}</span>
+                    <input type='button' value='把A数据传给C' @click='send' />    
+                </div>
+            `,
+            methods: {
+                send() {
+                    
+                }
+            }
+        }
+        new Vue({
+            el: '#app',
+            components: {
+                'dom-a': A,
+                'dom-b': B,
+                'dom-c': C
+            }
+        })
+    </script>
+
+</body>
+</html>
