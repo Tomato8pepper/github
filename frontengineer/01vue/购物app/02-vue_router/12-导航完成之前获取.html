@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="app"></div>
+	<script src="./node_modules/vue-router/dist/vue-router.js"></script>
+    <script src="./node_modules/vue/dist/vue.js"></script>
+    <script src="../03-axios/node_modules/axios/dist/axios.js"></script>
+    <script>
+        var Test = {
+            
+            template:`
+				<div>
+                    我是测试组件
+                </div>
+			`
+        }
+
+        var User = {
+            data() {
+                return {
+                    user: '',
+                    error: null,
+                    timer: null,
+                    num: 0,
+                    msg: '',
+                    msg1: ''
+                }
+            },
+            template:`
+				<div>
+                    <div>{{num}}</div>
+
+                    <input type='text' v-model='msg' />
+                    <p>{{msg1}}</p>
+                    <button @click='save' >保存</button>
+
+                    <div v-if="error" class = 'error'>
+						{{error}}
+					</div>
+                    <div v-if="user" class = 'user'>
+						<h2>{{user}}</h2>
+					</div>
+                </div>
+			`,
+            methods: {
+                setDatas(user) {
+                    this.user = user
+                },
+                setError(err) {
+                    this.err = err
+                },
+                save() {
+                    
+                }
+            },
+            created() {
+                this.timer = setInterval(() => {
+                    this.num += 1
+                }, 1000)
+            },
+            beforeRouteEnter(to, from, next) {
+                // 在渲染该组件的对应路由被验证前调用
+                // 不能获取组件实例 `this` ！
+                // 因为当守卫执行时，组件实例还没被创建！
+                axios.get(`http://127.0.0.1:8888/user/${to.params.id}`)
+                .then(res => {
+                    next(vm => vm.setDatas(res.data))
+                })
+                .catch(err => {
+                    next(vm => vm.setError(err))
+                })
+            },
+            beforeRouteUpdate(to, from, next) {
+                // 在当前路由改变，但是该组件被复用时调用
+                // 举例来说，对于一个带有动态参数的路径 `/users/:id`，在 `/users/1` 和 `/users/2` 之间跳转的时候，
+                // 由于会渲染同样的 `UserDetails` 组件，因此组件实例会被复用。而这个钩子就会在这个情况下被调用。
+                // 因为在这种情况发生的时候，组件已经挂载好了，导航守卫可以访问组件实例 `this`
+                this.user = null
+                this.$axios.get(`http://127.0.0.1:8888/user/${to.params.id}`)
+                .then(res => {
+                    this.setDatas(res.data)
+                    next()
+                })
+                .catch(err => {
+                    this.setError(err)
+                    next()
+                })
+            },
+            beforeRouteLeave(to, from, next) {
+                // 在导航离开渲染该组件的对应路由时调用
+                // 与 `beforeRouteUpdate` 一样，它可以访问组件实例 `this`
+                clearInterval(this.timer)
+                next()
+            }
+        }
+
+        Vue.use(VueRouter)
+        var router = new VueRouter({
+			routes:[
+				{
+					path:'/user/:id',
+					name:'user',
+					component:User
+				},
+				{
+					path:'/test',
+					name:'test',
+					component:Test
+				}
+			]
+		});
+        var App = {
+			template:`
+				<div>
+					<router-link :to = "{name:'test'}">测试</router-link>
+					<router-link :to = "{name:'user', params:{id:1}}">我的用户1</router-link>
+                    <router-link :to = "{name:'user', params:{id:2}}">我的用户2</router-link>
+
+						<router-view></router-view>
+
+
+				</div>
+			`
+		};
+
+        Vue.prototype.$axios  = axios;
+        new Vue({
+            el:"#app",
+			data:{
+
+			},
+
+			components:{
+				App
+			},
+			template:`<App />`,
+			router
+        })
+    </script>
+</body>
+</html>
