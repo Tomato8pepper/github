@@ -13,3 +13,7 @@
 - npm i css-loader style-loader -D
 - npm i url-loader file-loader -D
 - npm install -g @vue/cli
+
+# 网址
+- [npm包](https://www.npmjs.com/)
+- [mint-ui](https://mint-ui.github.io/#!/zh-cn)
