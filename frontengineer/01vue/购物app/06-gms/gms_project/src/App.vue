@@ -5,19 +5,19 @@
     <router-view />
 
     <mt-tabbar v-model="selected">
-      <mt-tab-item id="index">
+      <mt-tab-item id="Home">
         <img slot="icon" src="./assets/index.png" />
         首页
       </mt-tab-item>
-      <mt-tab-item id="vip">
+      <mt-tab-item id="Member">
         <img slot="icon" src="./assets/vip.png" />
         会员
       </mt-tab-item>
-      <mt-tab-item id="shopcart">
+      <mt-tab-item id="Shopcart">
         <img slot="icon" src="./assets/shopcart.png" />
         购物车
       </mt-tab-item>
-      <mt-tab-item id="find">
+      <mt-tab-item id="Find">
         <img slot="icon" src="./assets/find.png" />
         查找
       </mt-tab-item>
@@ -33,8 +33,10 @@ export default {
       selected: ''
     }
   },
-  created() {
-    
+  watch: {
+    selected(newV, oldV) {
+      this.$router.push({ name: newV })
+    }
   }
 }
 </script>

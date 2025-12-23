@@ -9,6 +9,9 @@ Vue.use(mint)   // 注册所有的全局组件，和给Vue.prototype挂载一些
 import 'mint-ui/lib/style.min.css'
 
 import axios from 'axios'
+// 引入自己的插件安装器
+import Installer from './plugins/installer'
+Vue.use(Installer)
 Vue.prototype.$axios = axios
 axios.defaults.baseURL = 'https://www.sinya.online/api/'
 
