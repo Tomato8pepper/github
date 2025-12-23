@@ -1,10 +1,10 @@
 <template>
   <div>
-    <mt-header title="购物信息系统"></mt-header>
+    <mt-header title="购物信息系统" fixed></mt-header>
 
     <router-view />
 
-    <mt-tabbar v-model="selected">
+    <mt-tabbar v-model="selected" fixed>
       <mt-tab-item id="Home">
         <img slot="icon" src="./assets/index.png" />
         首页

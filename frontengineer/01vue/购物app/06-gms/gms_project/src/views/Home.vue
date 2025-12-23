@@ -1,10 +1,13 @@
 <template>
   <div class="home">
-    <mt-swipe :auto="1000">
-      <mt-swipe-item v-for="item in imgs" :key="item.id">
-        <img :src="item.content" />
-      </mt-swipe-item>
-    </mt-swipe>
+    <div class="home-image">
+      <mt-swipe :auto="1000">
+        <mt-swipe-item v-for="item in imgs" :key="item.id">
+          <img :src="item.content" />
+        </mt-swipe-item>
+      </mt-swipe>
+    </div>
+    
     <div class="grid">
       <ul>
         <li v-for="(module, index) in modules" :key="index">
@@ -81,12 +84,15 @@ export default {
 };
 </script>
 
-<style>
+<style scoped>
 .home {
+  width: 100%;
+}
+.home-image{
   width: 100%;
   height: 200px;
 }
-img{
+.home-image img{
   width: 100%;
   height: 100%;
 }
