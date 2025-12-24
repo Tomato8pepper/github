@@ -1,6 +1,6 @@
 <template>
   <div>
-    <mt-header title="购物信息系统" fixed></mt-header>
+    <mt-header title="购物信息系统"></mt-header>
 
     <router-view />
 

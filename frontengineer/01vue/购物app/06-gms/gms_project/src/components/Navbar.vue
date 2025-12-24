@@ -1,10 +1,10 @@
 <template>
   <div>
-    <mt-header :title="title" fixed>
+    <mt-header :title="title">
       <router-link to="/" slot="left">
         <mt-button icon="back" @click="goback">返回</mt-button>
       </router-link>
-      <mt-button icon="more" slot="right"></mt-button>
+      <mt-button slot="right"></mt-button>
     </mt-header>
   </div>
 </template>
