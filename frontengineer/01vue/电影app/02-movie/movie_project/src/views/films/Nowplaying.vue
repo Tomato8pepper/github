@@ -1,6 +1,13 @@
 <template>
     <div>
-        <img class="top" src="https://img1.baidu.com/it/u=153359460,691572602&fm=253&fmt=auto&app=120&f=JPEG?w=889&h=500" />
+        <div class="nowplaying-lunbo">
+            <van-swipe :autoplay="1000">
+                <van-swipe-item v-for="(image, index) in images" :key="index">
+                    <img v-lazy="image" />
+                </van-swipe-item>
+            </van-swipe>
+        </div>
+        
         <van-tabs v-model="activeName">
             <van-tab title="正在热映" name="a">
                 <van-list 
@@ -75,13 +82,20 @@ Vue.filter('actorsFilter', (data) => {
 export default {
     data() {
         return {
+            images: [
+                'https://img1.baidu.com/it/u=3088623578,2284871675&fm=253&fmt=auto&app=138&f=JPEG?w=1911&h=800',
+                'https://img0.baidu.com/it/u=1162672670,4222951671&fm=253&fmt=auto&app=120&f=JPEG?w=664&h=374',
+                'https://img2.baidu.com/it/u=1180194578,1247959243&fm=253&fmt=auto&app=138&f=JPEG?w=889&h=500',
+                'https://img0.baidu.com/it/u=2358257367,3115002835&fm=253&fmt=auto&app=138&f=JPEG?w=800&h=500'
+            ],
             datalist: [],
             height: '0px',
             loading: false,
             finished: false,
             count: 1,
             total: 0,
-            activeName: 'a'
+            activeName: 'a',
+            
         }
     },
     mounted() {
@@ -140,9 +154,13 @@ export default {
 
 <style lang='scss' scoped>
 
-.top{
+.nowplaying-lunbo{
     width: 100%;
     height: 200px;
+    img{
+        width: 100%;
+        height: 200px;
+    }
 }
 .tabnav{
     text-align: center;

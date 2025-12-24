@@ -1,4 +1,4 @@
-# test2008
+# movie_project
 
 ## Project setup
 ```

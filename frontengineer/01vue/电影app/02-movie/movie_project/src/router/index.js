@@ -14,24 +14,6 @@ const routes = [
     path: '*',
     redirect: '/home'
   },
-  // {
-  //   path: '/',
-  //   name: 'Home',
-  //   component: HomeView
-  // },
-  {
-    path: '/about',
-    name: 'About',
-    // route level code-splitting
-    // this generates a separate chunk (about.[hash].js) for this route
-    // which is lazy-loaded when the route is visited.
-    component: () => import(/* webpackChunkName: "about" */ '../views/AboutView.vue')
-  },
-  // {
-  //   path: '/',
-  //   name: 'Nowplaying',
-  //   component: Nowplaying
-  // },
   {
     path: '/home',
     name: 'Home',
@@ -65,18 +47,7 @@ const routes = [
 ]
 
 const router = new VueRouter({
-  mode: 'hash',
-  base: process.env.BASE_URL,
   routes
 })
-
-// router.beforeEach((to, from, next) => {
-  // console.log('==before', to, from, next)
-  // next()
-// })
-
-// router.afterEach((to, from, next) => {
-//   console.log('==after', to, from)
-// })
 
 export default router
