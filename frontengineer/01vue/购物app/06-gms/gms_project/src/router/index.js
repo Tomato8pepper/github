@@ -1,12 +1,12 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
-import Home from '../views/Home'
+import Home from '../views/home/Home'
 import Member from '../views/member/Member'
 import Shopcart from '../views/shopcart/Shopcart'
 import Find from '../views/find/Find'
-import NewsList from '../views/news/NewsList'
-import DetailList from '../views/detail/DetailList'
-import PhotoList from '../views/PhotoList'
+import NewsList from '../views/home/NewsList'
+import DetailList from '../views/home/DetailList'
+import PhotoList from '../views/home/PhotoList'
 
 Vue.use(VueRouter)
 

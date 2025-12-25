@@ -107,22 +107,22 @@ export default {
   background-repeat: round;
 }
 .back-news{
-  background-image: url('../assets/news.png');
+  background-image: url('../../assets/news.png');
 }
 .back-picShare{
-  background-image: url('../assets/picShare.png');
+  background-image: url('../../assets/picShare.png');
 }
 .back-goodsShow{
-  background-image: url('../assets/goodsShow.png');
+  background-image: url('../../assets/goodsShow.png');
 }
 .back-feedback{
-  background-image: url('../assets/feedback.png');
+  background-image: url('../../assets/feedback.png');
 }
 .back-search{
-  background-image: url('../assets/search.png');
+  background-image: url('../../assets/search.png');
 }
 .back-callme{
-  background-image: url('../assets/callme.png');
+  background-image: url('../../assets/callme.png');
 }
 ul{
   margin: 0;

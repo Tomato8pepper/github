@@ -1,5 +1,5 @@
 # github
-## 退回add的 文件  ==> git reset filename
+## 退回add的 文件  ==> git reset filename  ==> git reset
 ## 退回一个commit  ==> git reset HEAD^1
 
 ## npm
