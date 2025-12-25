@@ -64,7 +64,7 @@ export default {
       ],
       modules: [
         { title: '新闻资讯', className: 'back-news', route: {name: 'NewsList'}},
-        { title: '图文分享', className: 'back-picShare', route: {name: ''}},
+        { title: '图文分享', className: 'back-picShare', route: {name: 'PhotoList'}},
         { title: '商品展示', className: 'back-goodsShow', route: {name: ''}},
         { title: '留言反馈', className: 'back-feedback', route: {name: ''}},
         { title: '搜索资讯', className: 'back-search', route: {name: ''}},

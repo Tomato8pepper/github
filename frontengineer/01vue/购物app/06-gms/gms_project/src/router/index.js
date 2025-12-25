@@ -6,7 +6,7 @@ import Shopcart from '../views/shopcart/Shopcart'
 import Find from '../views/find/Find'
 import NewsList from '../views/news/NewsList'
 import DetailList from '../views/detail/DetailList'
-
+import PhotoList from '../views/PhotoList'
 
 Vue.use(VueRouter)
 
@@ -40,6 +40,11 @@ const routes = [
     path: '/detail',
     name: 'DetailList',
     component: DetailList
+  },
+  {
+    path: '/photolist',
+    name: 'PhotoList',
+    component: PhotoList
   }
 ]
 

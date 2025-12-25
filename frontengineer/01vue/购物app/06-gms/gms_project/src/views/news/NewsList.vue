@@ -4,7 +4,7 @@
 
     <div class="list">
       <ul>
-        <li v-for="item in newsList" :key="item.id" @click="jumpDetail">
+        <li v-for="item in newsList" :key="item.id" @click="jumpDetail(item)">
           <img :src="item.imgSrc" alt="">
           <div class="list-content">
             <div class="content-title">{{item.title}}</div>
@@ -32,6 +32,7 @@ export default {
           title: "习近平总书记重要指示为做好中央企业工作指明方向  文脉华章｜从这里读懂中华文明",
           number: 3,
           time: "2025-12-20",
+          content: '2024年3月，习近平总书记来到湖南省常德市鼎城区谢家铺镇粮食生产万亩综合示范片区，走进水稻田边，察看秧苗培育和土地翻耕情况，并同种粮大户、农技人员、基层干部和村民亲切交流，详细询问春耕备耕等情况。总书记强调，我国有14亿多人口，粮食安全必须靠我们自己保证，中国人的饭碗应该主要装中国粮。作为全国粮食主产区之一，2025年，湖南围绕打造更高水平“洞庭粮仓”发力，克服多种不利因素，通过科技赋能、设施完善等举措，促进粮食生产高产再高产。三湘大地的每一寸耕土、每一粒稻穗，都在书写着“中国人的饭碗装中国粮”的生动答卷。(徐志雄 张雪盈 龚顺)'
         },
         {
           id: 2,
@@ -40,6 +41,7 @@ export default {
           title: "每3度电就有1度是绿电，我们是怎样做到的？",
           number: 3,
           time: "2025-12-20",
+          content: '近日，一段日本防卫大学学生冒雨集体参拜靖国神社的视频在日本社交媒体广泛流传。看着这段气氛肃杀的视频，“日本军国主义复活”既视感呼之欲出。'
         },
         {
           id: 3,
@@ -48,6 +50,7 @@ export default {
           title: "新闻1+1｜托育服务，既是家事也是国事！",
           number: 3,
           time: "2025-12-20",
+          content: '新华社北京12月24日电（记者袁睿、邵艺博）针对美方拟自2027年起对中国半导体产品征收关税，外交部发言人林剑12月24日在例行记者会上表示，中方坚决反对美方滥施关税，无理打压中国产业。美方做法扰乱全球产供链稳定，阻碍各国半导体产业发展，损人害己。'
         },
         {
           id: 4,
@@ -125,8 +128,8 @@ export default {
     };
   },
   methods: {
-    jumpDetail() {
-      this.$router.push({ name: 'DetailList' })
+    jumpDetail(item) {
+      this.$router.push({ name: 'DetailList', params:{ item }})
     }
   },
   components: {
@@ -160,6 +163,7 @@ ul li {
   border-bottom: 1px solid #ebedf0;
   padding: 10px 10px;
   font-size: 15px;
+  color: grey;
   font-family: -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Helvetica, Segoe UI, Arial, Roboto, 'PingFang SC', miui, 'Hiragino Sans GB', 'Microsoft Yahei', sans-serif;
   white-space: nowrap;
   text-overflow: ellipsis;
@@ -172,6 +176,7 @@ li img{
   border-radius: 5px;
 }
 .content-desc{
+  font-size: 13px;
   display: flex;
   align-items: center;
   justify-content: start;
