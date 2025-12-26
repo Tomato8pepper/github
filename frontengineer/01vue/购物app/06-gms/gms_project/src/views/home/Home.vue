@@ -64,7 +64,7 @@ export default {
       ],
       modules: [
         { title: '新闻资讯', className: 'back-news', route: {name: 'NewsList'}},
-        { title: '图文分享', className: 'back-picShare', route: {name: 'PhotoList'}},
+        { title: '图文分享', className: 'back-picShare', route: {name: 'PhotoList'}, query:{categoryId:0}},
         { title: '商品展示', className: 'back-goodsShow', route: {name: ''}},
         { title: '留言反馈', className: 'back-feedback', route: {name: ''}},
         { title: '搜索资讯', className: 'back-search', route: {name: ''}},
@@ -85,9 +85,6 @@ export default {
 </script>
 
 <style scoped>
-.home {
-  width: 100%;
-}
 .home-image{
   width: 100%;
   height: 200px;
@@ -124,13 +121,7 @@ export default {
 .back-callme{
   background-image: url('../../assets/callme.png');
 }
-ul{
-  margin: 0;
-  padding: 0;
-  overflow: hidden;
-}
 li{
-  list-style: none;
   float: left;
   width: 33.333%;
   text-align: center;

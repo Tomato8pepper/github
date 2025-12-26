@@ -16,7 +16,7 @@
           {{newsInfo.content}}
       </div>
       <div class="info-video" v-if="newsInfo.id===1">
-        <video src="./video/1.mp4" autoplay controls></video>
+        <video src="./video/1.mp4" controls></video>
       </div>
     </div>
   </div>

@@ -1,15 +1,17 @@
 <template>
-  <div>
+  <div class="newslist">
     <Navbar title="新闻列表"></Navbar>
 
     <div class="list">
       <ul>
         <li v-for="item in newsList" :key="item.id" @click="jumpDetail(item)">
-          <img :src="item.imgSrc" alt="">
+          <div class="list-img">
+            <img :src="item.imgSrc" alt="">            
+          </div>
           <div class="list-content">
             <div class="content-title">{{item.title}}</div>
             <div class="content-desc">
-              <p>点击数：{{item.number}}</p>
+              <p class="p1">点击数：{{item.number}}</p>
               <p>发表时间：{{item.time}}</p>
             </div>
           </div>
@@ -149,39 +151,41 @@ export default {
 </script>
 
 <style scoped>
-/* .list{
-    width: 100%;
-} */
 ul{
-    margin: 0 0 60px 0;
-    padding: 0;
-    overflow: hidden;
+    margin-bottom: 60px;
 }
 ul li {
   display: flex;
   align-items: center;
   border-bottom: 1px solid #ebedf0;
-  padding: 10px 10px;
-  font-size: 15px;
+  padding: 5px 5px;
   color: grey;
   font-family: -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Helvetica, Segoe UI, Arial, Roboto, 'PingFang SC', miui, 'Hiragino Sans GB', 'Microsoft Yahei', sans-serif;
-  white-space: nowrap;
-  text-overflow: ellipsis;
   overflow: hidden;
 }
-li img{
+.list-img{
   width: 40px;
   height: 60px;
-  margin-right: 15px;
+  margin-right: 10px;
+}
+.list-img img{
+  width: 40px;
+  height: 60px;
   border-radius: 5px;
 }
-.content-desc{
+.content-title{
   font-size: 13px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  /* white-space: nowrap; */
+}
+.content-desc{
+  font-size: 10px;
   display: flex;
   align-items: center;
   justify-content: start;
 }
-.content-desc p{
-  margin: 8px 20px 0 0;
+.content-desc .p1{
+  margin-right: 50px;
 }
 </style>
