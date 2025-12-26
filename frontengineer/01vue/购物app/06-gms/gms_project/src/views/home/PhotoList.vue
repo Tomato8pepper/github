@@ -37,14 +37,18 @@ import Navbar from '../../components/Navbar.vue'
     export default {
         data() {
             return {
-                imgs:[],// 图片数据
+                imgs:[
+                    { img_url: 'https://img0.baidu.com/it/u=1635447820,2457558664&fm=253&app=138&f=JPEG?w=800&h=1372' },
+                    { img_url: 'https://pic.rmb.bdstatic.com/bjh/cms/250828/25fe94ef126990399d53b008ffdcdfaf_1756374128.5892_228.jpeg' },
+                    { img_url: 'https://img1.baidu.com/it/u=1085792732,2878563975&fm=253&app=138&f=JPEG?w=800&h=1372' }
+                ],// 图片数据
                 categories:[
                   { id: 0, title: '全部' },
                   { id: 1, title: '家居生活' },
-                  { id: 1, title: '摄影设计' },
-                  { id: 1, title: '明星美女' },
-                  { id: 1, title: '空间设计' },
-                  { id: 1, title: '户型装饰' }
+                  { id: 2, title: '摄影设计' },
+                  { id: 3, title: '明星美女' },
+                  { id: 4, title: '空间设计' },
+                  { id: 5, title: '户型装饰' }
                 ],// 分类信息
             }
         },
@@ -131,10 +135,11 @@ import Navbar from '../../components/Navbar.vue'
 .photolist li {
     list-style: none;
     position: relative;
+    text-align: center;
 }
 
 .photolist li img {
-    width: 100%;
+    width: 50%;
     height: 230px;
     vertical-align: top;
 }
