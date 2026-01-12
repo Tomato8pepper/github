@@ -29,38 +29,22 @@ export default {
         {
           id: 1,
           content:
-            "https://img2.baidu.com/it/u=2360297995,3511690021&fm=253&fmt=auto&app=138&f=JPEG?w=889&h=500",
+            "https://img0.baidu.com/it/u=132109662,2974978733&fm=253&fmt=auto&app=138&f=JPEG?w=889&h=500",
         },
         {
           id: 2,
-          content: 'https://img1.baidu.com/it/u=3088623578,2284871675&fm=253&fmt=auto&app=138&f=JPEG?w=1911&h=800'
+          content: 'https://img2.baidu.com/it/u=2644633810,1844202298&fm=253&fmt=auto&app=138&f=JPEG?w=500&h=319'
         },
         {
           id: 3,
           content:
-            "https://img1.baidu.com/it/u=549660128,2751598091&fm=253&fmt=auto&app=138&f=JPEG?w=800&h=500",
+            "https://img2.baidu.com/it/u=549882333,972383674&fm=253&fmt=auto&app=138&f=JPEG?w=751&h=500",
         },
         {
           id: 4,
           content:
-            "https://img0.baidu.com/it/u=1162672670,4222951671&fm=253&fmt=auto&app=120&f=JPEG?w=664&h=374",
-        },
-        {
-          id: 5,
-          content:
-            "https://img1.baidu.com/it/u=1925440351,2217858683&fm=253&fmt=auto&app=138&f=JPEG?w=752&h=500",
-        },
-        {
-          id: 6,
-          content:
-            "https://img2.baidu.com/it/u=1180194578,1247959243&fm=253&fmt=auto&app=138&f=JPEG?w=889&h=500",
-        },
-        {
-          id: 7,
-          content:
-            "https://img0.baidu.com/it/u=2358257367,3115002835&fm=253&fmt=auto&app=138&f=JPEG?w=800&h=500",
+            "https://img0.baidu.com/it/u=1226411821,570469579&fm=253&fmt=auto&app=138&f=JPEG?w=767&h=500",
         }
-        
       ],
       modules: [
         { title: '新闻资讯', className: 'back-news', route: {name: 'NewsList'}},

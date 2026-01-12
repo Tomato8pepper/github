@@ -38,9 +38,9 @@ import Navbar from '../../components/Navbar.vue'
         data() {
             return {
                 imgs:[
-                    { img_url: 'https://img0.baidu.com/it/u=1635447820,2457558664&fm=253&app=138&f=JPEG?w=800&h=1372' },
-                    { img_url: 'https://pic.rmb.bdstatic.com/bjh/cms/250828/25fe94ef126990399d53b008ffdcdfaf_1756374128.5892_228.jpeg' },
-                    { img_url: 'https://img1.baidu.com/it/u=1085792732,2878563975&fm=253&app=138&f=JPEG?w=800&h=1372' }
+                    { img_url: 'https://img2.baidu.com/it/u=4248171886,1155024084&fm=253&fmt=auto&app=138&f=JPEG?w=362&h=643' },
+                    { img_url: 'https://img2.baidu.com/it/u=2908633079,2948585188&fm=253&fmt=auto&app=138&f=JPEG?w=500&h=751' },
+                    { img_url: 'https://img2.baidu.com/it/u=2908633079,2948585188&fm=253&fmt=auto&app=138&f=JPEG?w=500&h=751' }
                 ],// 图片数据
                 categories:[
                   { id: 0, title: '全部' },

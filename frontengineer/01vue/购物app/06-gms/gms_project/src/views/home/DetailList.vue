@@ -15,9 +15,6 @@
       <div class="info-cont">
           {{newsInfo.content}}
       </div>
-      <div class="info-video" v-if="newsInfo.id===1">
-        <video src="./video/1.mp4" controls></video>
-      </div>
     </div>
   </div>
 </template>
@@ -73,13 +70,5 @@ img{
 .info-cont{
   color: #797d82;
   font-size: 13px;
-}
-.info-video{
-  height: 200px;
-  padding: 10px;
-}
-.info-video video{
-  width: 100%;
-  height: 100%;
 }
 </style>
