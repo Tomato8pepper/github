@@ -78,7 +78,7 @@
     console.log(child2.info.name); // "wxb"
     console.log(child2.age); // 18
 
-// ​	在上面例子中，Parent构造函数接收一个name参数，并将他赋值给一个属性，在Child构造函数中调用Parent构造
+// ​ 在上面例子中，Parent构造函数接收一个name参数，并将他赋值给一个属性，在Child构造函数中调用Parent构造
 //  函数时传入这个参数， 实际上会在Child实例上定义name属性。为确保Parent构造函数不会覆盖Child定义的属性，
 //  可以在调用父类构造函数之后再给子类实例添加额外的属性
 //  优点:
